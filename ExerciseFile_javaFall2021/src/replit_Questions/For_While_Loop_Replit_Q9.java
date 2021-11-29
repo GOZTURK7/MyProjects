@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class For_While_Loop_Replit_Q9 {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 
 

@@ -2,7 +2,7 @@ package replit_Questions;
 
 import java.util.Scanner;
 
-public class List_Q9 {
+public class List_Q9_MaxOccuredCharacterInString {
 
 	public static void main(String[] args) {
 

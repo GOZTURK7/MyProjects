@@ -56,19 +56,9 @@ public class List_Q1_tekrar_ListIleCozum {
 
 		}
 		System.out.println("en çok tekrar eden: " + sonuc + "\ntekrar sayısı:  " + max);
+		
+		scan.close();
 
-//			int uzunluk = input1.size();
-//			for (int i = 0; i < uzunluk; i++) {
-//				for (int j = i + 1; j < uzunluk; j++) {
-//					if (input1.get(i).equals(input1.get(j))) {
-//						input1.remove(j);
-//						currentCounter++;
-//						uzunluk = input1.size();
-//						continue;
-		//
-//					}
-//				}
-//			}
 
 	}
 }

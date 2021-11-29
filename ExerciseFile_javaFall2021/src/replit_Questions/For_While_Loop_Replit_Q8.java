@@ -2,6 +2,7 @@ package replit_Questions;
 
 public class For_While_Loop_Replit_Q8 {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 	/*
