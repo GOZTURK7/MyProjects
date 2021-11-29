@@ -11,7 +11,29 @@ public class QFibonacci {
      */
 
     public static void main(String[] args) {
+    	
+//    	
+//    	Scanner scan = new Scanner(System.in);
+//    	int num = scan.nextInt();
+//    	
+//    	List<int> liste1 = new ArrayList
+//    	
+//    	for (int i = 1; i <num; i++) {
+//    		
+//    		for (int j = i-1; j < i; j++) {
+//				
+//    			System.out.println(i);
+//    			System.out.println(i+j);
+//			}
+    			
+    		
+  
+			
+		}
+    	
+    	
+    	
 
 
-    }
+    
 }

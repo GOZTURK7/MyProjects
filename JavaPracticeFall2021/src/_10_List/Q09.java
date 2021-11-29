@@ -16,6 +16,30 @@ public class Q09 {
        output: maximumCounts occurring character is : a
         */
 
+    	Scanner scan = new Scanner(System.in);
+    	System.out.println("Lütfen bir cümle giriniz: ");
+    	String input = scan.nextLine().toLowerCase();
+    	
+    	int characters [] = new int [256];
+    	
+    	for (int i = 0; i < input.length(); i++) {
+			characters[input.charAt(i)]++;
+		}
+    	
+    	
+    	int encokTekrar=-1;
+    	char result = ' ';
+    	
+    	for (int i = 0; i < input.length(); i++) {
+			if (characters[input.charAt(i)] > encokTekrar) {
+				encokTekrar=characters[input.charAt(i)];
+				result = input.charAt(i);
+			}
+		}
+    	System.out.println("Result "+result + " tekrar sayısı: "+encokTekrar);
+    	
+    	
+    	
     }
 }
 
