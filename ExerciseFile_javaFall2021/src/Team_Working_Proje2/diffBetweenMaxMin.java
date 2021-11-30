@@ -1,6 +1,7 @@
 package Team_Working_Proje2;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class diffBetweenMaxMin {
@@ -49,24 +50,26 @@ public class diffBetweenMaxMin {
 
 		}
 
-	
- // Your code start here. Don't remove or change anything before this line. Your
-	// array is -> useThisArray in line 27
+		// Your code start here. Don't remove or change anything before this line. Your
+		// array is -> useThisArray in line 27
 // Kodlamaya burdan başla.Bu satırdan önceki satırlarda hiçbirşeyi kaldırma ve
 // degiştirme. Kullanacağın array 27.ci satırda --> useThisArray
 
-		int max=Integer.MIN_VALUE;
-		int min=Integer.MAX_VALUE;
+		int max = Integer.MIN_VALUE;
+		int min = Integer.MAX_VALUE;
 		for (int i = 0; i < useThisArray.length; i++) {
-			for (int j = i+1; j < useThisArray.length; j++) {
-				max= Math.max(useThisArray[i], useThisArray[j]);
-				min= Math.min(useThisArray[i], useThisArray[j]);
+			for (int j = i + 1; j < useThisArray.length; j++) {
+				if (Math.max(useThisArray[i], useThisArray[j]) > max) {
+					max = Math.max(useThisArray[i], useThisArray[j]);
+				}
+				if (Math.min(useThisArray[i], useThisArray[j]) < min) {
+					min = Math.min(useThisArray[i], useThisArray[j]);
+				}
+
 			}
-		}System.out.println(Arrays.toString(useThisArray));
+		}
+		System.out.println(Arrays.toString(useThisArray));
 		System.out.println("max: " + max + " min: " + min);
 
 	}
 }
-
-
-

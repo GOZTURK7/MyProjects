@@ -17,7 +17,21 @@ public class Q08 {
          * OUTPUT : String[] isimler={"Umit","Emin","Furkan","Kerem","Taylan","Orhan","Sinan","Kemal","Ahmet","Ali"};
          */
 
-
+    	String[] isimler={"Umit","Emin","Kemal","Kerem","Taylan","Orhan","Sinan","Furkan","Ahmet","Ali"};    
+    	
+    	List<String> liste1 = new ArrayList<>();
+    	
+    	liste1.add(isimler[2]);
+    	isimler[2]=isimler[7];
+    	isimler[7]=liste1.get(0);
+    	System.out.println(Arrays.toString(isimler));
+    	
+    	
+    	
+    	
+    	
+    	
+    	
 
 
     }

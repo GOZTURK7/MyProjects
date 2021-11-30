@@ -1,6 +1,8 @@
 package Team_Working_Proje2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class removeDuplicates {
@@ -66,5 +68,13 @@ public class removeDuplicates {
 		// Kodlamaya burdan başla.bu satırdan önceki satirlarda hicbirşeyi degiştirme.
 		// useThisLine arrayini kullan
 
+		List<Integer> liste = new ArrayList<>();
+
+		for (int i = 0; i < useThisArray.length; i++) {
+
+			for (int j = 0; j < useThisArray.length; j++) {
+
+			}
+		}
 	}
 }
