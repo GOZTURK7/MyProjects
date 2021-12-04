@@ -19,21 +19,26 @@ public class Atm_Projesi {
 	static String cardNo = "1";
 	static String password = "1";
 	static int bakiye = 2000;
+	private static boolean flag = true;
 
 	public static void main(String[] args) {
 
-		Scanner scan = new Scanner(System.in);
+		String kartNumarası = "";
+		String sifre = "";
 
-		System.out.println("Lütfen Kart Numaranızı Giriniz: ");
-		String kartNumarası = scan.nextLine().replaceAll("\s", ""); // !!! burada güzel birşey yaptım int variable da
-																	// newtline ile string aldım sonra onu parse int ile
-																	// ıntegere'a çevirip int variable a tek satırda
-																	// atadım
-		System.out.println("Lütfen Şifrenizi Giriniz: ");
-		String sifre = scan.next();	
-		int sayac = 3;
 		do {
-			
+			Scanner scan = new Scanner(System.in);
+
+			System.out.println("Lütfen Kart Numaranızı Giriniz: ");
+			kartNumarası = scan.nextLine().replaceAll("\s", "");
+
+			System.out.println("Lütfen Şifrenizi Giriniz: ");
+			sifre = scan.next();
+
+		} while (!(kartNumarası.equals(cardNo) || !(sifre.equals(password))));
+
+		do {
+			Scanner scan = new Scanner(System.in);
 			if (kartNumarası.equals(cardNo) && sifre.equals(password)) {
 				islemler();
 				System.out.println("Lütfen işlem seçiniz: ");
@@ -56,22 +61,15 @@ public class Atm_Projesi {
 					break;
 				case 6:
 					cıkıs();
+
 					break;
 				default:
 					System.out.println("Lütfen geçerli bir işlem giriniz:");
 				}
-			}else {
-				sayac-=1;
-				if (sayac>0) {
-					System.out.println("Hatalı Giriş Yaptınız");		
-				}else {
-					System.out.println("Giriş Hakkınız kalmadı Sistemden Çıkılıyor..");
-				}
-			}
-			//devamMi();
-			//
 
-		}while (sayac != 0);
+			}
+		} while (flag);
+
 	}
 
 	private static boolean devamMi() {
@@ -85,36 +83,55 @@ public class Atm_Projesi {
 		}
 	}
 
-	private static void cıkıs() {
-		System.out.println("Çıkış yapıldı, Güle GÜle .....");
+	private static boolean cıkıs() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Çıkış yapmak istediğinize Emin misiniz? E/H");
+		String cıkıs = scan.next();
+		if (cıkıs.equalsIgnoreCase("e")) {
+			System.out.println("çıkış yapıldı güle güle.");
+			flag = false;
+			return false;
+		}
+		return true;
+
 	}
 
 	public static void sifreDegistir() {
-		int sayac = 3;
-		while (sayac > 0) {
+		boolean dogruMu = true;
+		while (dogruMu) {
 			Scanner scan = new Scanner(System.in);
 			System.out.print("Lütfen Mevcut Şifreyi Giriniz: ");
 			String mevcutSifre = scan.next();
 			if (mevcutSifre.equals(password)) {
 				System.out.print("Lütfen Yeni Şifreyi Giriniz: ");
-				password = mevcutSifre;
+				String yeniSifre = scan.next();
+				password = yeniSifre;
 				System.out.println("Şifreniz değiştirildi yeni şifreniz: " + password);
-				break;
+				dogruMu = false;
 
 			} else {
-				sayac -= 1;
-				System.out.println("Mevcut sifreyi hatalı girdiniz " + sayac + " hakkınız kaldı.");
+				System.out.println("Mevcut sifreyi hatalı girdiniz tekrar deneyin");
 			}
 		}
-		System.out.println("Şifreyi 3 kez hatalı girdiniz çıkış yapılıyor...");
-		cıkıs();
 
 	}
 
 	public static int paraGonderme() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("IBAN'ı giriniz: ");
-		String iban = scan.next();
+		boolean flag = true;
+		do {
+			System.out.print("IBAN'ı giriniz: ");
+			String iban = scan.next().replaceAll(" ", "").toUpperCase();
+			if (!iban.contains("TR") || !iban.startsWith("TR")) {
+				System.out.print("IBAN' TR ile başlamalıdır. ");
+			} else if (iban.length() != 28) {
+				System.out.println("IBAN 26 Numara Olmalıdır.");
+			} else {
+				flag = false;
+			}
+
+		} while (flag);
+
 		System.out.print("Gönderilcek tutarı giriniz: ");
 		int tutar = scan.nextInt();
 
