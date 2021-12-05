@@ -30,6 +30,30 @@ public class sumTotal {
 	public static void main(String[] args) {
 
 //        Koda burdan başlayın
+		
+		String arr [][] =  {{"$12" , "$22" , "5"},{"€9" , "€40" , "$1" , "$2"}, {"€12"}};
+		
+		for (String[] w : arr) {
+			
+			for (int i = 0; i < w.length; i++) {
+				
+				if (w[i].contains("$")) {
+					
+					double a = Integer.parseInt(w[i].replace("$", ""));
+					
+					System.out.println(a * 3.2);
+				
+				}else if (w[i].contains("€")) {
+					
+					double b = Integer.parseInt(w[i].replace("€", ""));
+					
+					System.out.println(b * 4.2);
+				}
+		
+				
+			}
+			
+		}
 
 	}
 }

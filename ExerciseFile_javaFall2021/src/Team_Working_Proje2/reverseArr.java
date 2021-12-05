@@ -1,6 +1,8 @@
 package Team_Working_Proje2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class reverseArr {
@@ -42,5 +44,22 @@ public class reverseArr {
 
 		// Koda burdan başlayın
 
+		
+		System.out.println("useThisArray: "+Arrays.toString(useThisArray));
+		
+		
+		List<String> reverse = new ArrayList<>();
+		
+		for (int i = useThisArray.length-1; i >= 0 ; i--) {
+			
+			reverse.add(useThisArray[i]);
+			
+			
+		}System.out.println("reversed: " + reverse);
+		
+		
+		
+		
+		
 	}
 }
