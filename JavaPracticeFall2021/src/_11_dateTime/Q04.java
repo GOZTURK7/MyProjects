@@ -14,7 +14,7 @@ public class Q04 {
 
         LocalDate date = LocalDate.of(2018, Month.APRIL, 30);
         date.plusDays(2);
-        date.plusYears(3);
+        date.plusYears(3); // BURALARDA ATAMA YAPMADIĞIMIZ İÇİN ESKİ VERİLERİ GETİRİYOR AŞAĞIDAKİ KOD,
 
         System.out.println(date.getYear() + " " + date.getMonth() + " " + date.getDayOfMonth());
 /*

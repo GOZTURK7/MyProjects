@@ -11,7 +11,7 @@ public class Q03 {
          What is the output of the following code?
         Asagidaki code'un  ciktisi  nedir?
         */
-        LocalDate date = LocalDate.of(2018,Month.FEBRUARY, 29);
+        LocalDate date = LocalDate.of(2018,Month.FEBRUARY, 29); // 2018'DE ŞUBAT 28 OLDUĞU İÇİN CEVAP (F)
 
         System.out.println(date.getYear() + " " + date.getMonth() + " " + date.getDayOfMonth());
 
@@ -24,5 +24,11 @@ public class Q03 {
             F. A runtime exception is thrown.
             */
 
+        
+        
+        
+        
+        
+        
     }
 }

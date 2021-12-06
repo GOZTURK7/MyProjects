@@ -11,7 +11,7 @@ public class Q02 {
            B. new LocalDate(2014, 6, 21);
            C. LocalDate.of(2014, 5, 21);
            D. LocalDate.of(1453, 5, 29);
-           F. LocalDate.of(1453, Month.MAY, 21);
+           F. LocalDate.of(2014, Month.JUNE, 21);  CEVAP (F) VE (D)
          */
 
 

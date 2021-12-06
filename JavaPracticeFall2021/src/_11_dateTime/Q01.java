@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 public class Q01 {
 
 	public static void main(String[] args) {
-		String date = LocalDate.parse("2014-05-04").format(DateTimeFormatter.ISO_DATE_TIME);
+		String date = LocalDate.parse("2014-05-04").format(DateTimeFormatter.ISO_DATE_TIME); // Date var ama DateTime'dan Formatter çağrılmış
 		System.out.println(date);
 		//what is the result ?
 
