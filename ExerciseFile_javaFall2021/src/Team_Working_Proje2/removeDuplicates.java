@@ -68,16 +68,19 @@ public class removeDuplicates {
 
 		// Kodlamaya burdan başla.bu satırdan önceki satirlarda hicbirşeyi degiştirme.
 		// useThisLine arrayini kullan
+		// 1 2 2 2 3 3 3 4 4 4 5 5 5
+
 
 		List<Integer> list = new ArrayList<>();
 		{
 			for (int i = 0; i < useThisArray.length; i++) {
-				for (int j = i + 1; j < useThisArray.length; j++) {
+				
 					if (!list.contains(useThisArray[i])) {
+						
 						list.add(useThisArray[i]);
 					}
 				}
 			}System.out.println(list);
 		}
-	}
+	
 }

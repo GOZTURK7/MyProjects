@@ -31,7 +31,7 @@ public class sumTotal {
 
 //        Koda burdan başlayın
 		
-		String arr [][] =  {{"$12" , "$22" , "5"},{"€9" , "€40" , "$1" , "$2"}, {"€12"}};
+		String arr [][] =  {{"$12" , "$22" , "5$"},{"€9" , "€40" , "$1" , "$2"}, {"€12"}};
 		
 		for (String[] w : arr) {
 			
@@ -41,7 +41,7 @@ public class sumTotal {
 					
 					double a = Integer.parseInt(w[i].replace("$", ""));
 					
-					System.out.println(a * 3.2);
+					System.out.println((a * 3.2));
 				
 				}else if (w[i].contains("€")) {
 					

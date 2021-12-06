@@ -1,5 +1,6 @@
 package Team_Working_Proje2;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class arrayContains {
@@ -57,27 +58,32 @@ public class arrayContains {
 //        Koda burdan başla
 //        UseThisArray1 ve UseThisArray2 array isimlerini kullan
 
-        boolean b1 = false;
 
-        for(int i = 0 ; i<UseThisArray2.length ; i++) {
-            for (int j = 0; j < UseThisArray1.length; j++) {
+        
+        System.out.println(Arrays.toString(UseThisArray1));
+        
+        System.out.println(Arrays.toString(UseThisArray2));
+        
+        boolean flag = true;
+        
+        for (int i = 0; i < UseThisArray2.length; i++) {
+			
+        	for (int j = 0; j < UseThisArray1.length; j++) {
+				
+        		if (UseThisArray2[i] == UseThisArray1[j]) {
+        			flag=true;
+        			break;
+        			
+        		}else {
+        			flag=false;
+        			
+        		}
+			}
+        }System.out.println(flag);
 
-
-                if (UseThisArray1[j] == UseThisArray2[i]) {
-                    b1 = true;
-                    break;
-
-                } else if (UseThisArray1[j] != UseThisArray2[i] ) {
-                    b1 = false;
-
-                }
-            }
-        }
-
-        System.out.println(b1);
-        scan.close();
-
-
+        
+        
+        
 
 
 

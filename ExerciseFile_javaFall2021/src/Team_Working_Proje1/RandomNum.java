@@ -1,6 +1,11 @@
 package Team_Working_Proje1;
 
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -31,55 +36,57 @@ public class RandomNum {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("bir sasyi giriniz : ");
+        System.out.print("bir sayi giriniz : ");
         int max=scanner.nextInt();
         
        
         //  code Start here don't change before this line
         // kodu burdan başlatın ve bu satırdan önceki kodları değiştirmeyin
 
-        int arr[] = new int [max];
-        
-        int counter=0;
-        do {
-        	
-        	int value=0;
-        	arr[counter]=value;
-        	
-        	
-        	
-        	counter++;
-        }while(counter!=max);
-        
-        System.out.println(Arrays.toString(arr));
-        
-        
-        /*
-         * Sözde rassal (rastgele) sayı üreteci (pseudorandom number generator, 
-         * PRNG, sözde rastgele), öğeleri arasında kolay kolay 
-         * ilişki kurulamayacak bir sayı dizisi üreten algoritma türlerine verilen genel isimdir.
-
-			Sözde rassal sayı üreteçlerinin çıktıları gerçek anlamda rassal değildir, 
-			bu tür algoritmalar gerçek rassal sayı dizilerinin bazı özelliklerini yaklaşık olarak taşır. 
-			John von Neumann'ın da belirttiği gibi 
-			"Aritmetik yöntemlerle rassal sayılar üretmeye çalışan biri büyük günah işliyordur.
-			[1]" Her ne kadar rassal sayılar donanımsal rassal sayı üreteçleri ile üretiliyor olsa da, 
-			sözde rassal sayılar modern bilgiişlemin önemli bir bölümünü kapsamaktadır ve 
-			bunlar kriptolojiden tutun fiziksel sistemleri simüle etmeye yarayan 
-			Monte Carlo yöntemlerine dek pek çok yerde kullanılmaktadır. 		
-         * 
-         */
-        
-        
-        /*
-         * Basit bit PRNG üreteç, bir önceki sayıyı a ile çarpıp b ile toplayıp 
-         * sonucun modunu alarak sıradaki “sözde” rassal sayıyı üretir. 
-         * Kullanılan üretece göre farklı algoritmalar sözkonusu olabilir. 
-         * Örneğin büyük bir sayı üretilip onun n. basamağından k. basamağına kadar olan 
-         * sayıyı almak da belirli bir rassallık sağlar.
-         */
+       List<Integer> liste = new ArrayList<>();
+       
+       for (int i = 0; i <= max; i++) {
 		
+    	   liste.add(i);
+	}
+       //System.out.println("Before Shuffle: "+ liste);
+       
+       Collections.shuffle(liste);   // sorunun can alıcı noktası burası listenin shuffle metodu ile girilen sayıya kadar
+       								// olan rakamları dağınık bir şekilde karışık bir hale getiriy shuffle,
+       								// örneğin Before Shuffle: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+       								//	       After Shuffle : [4, 0, 3, 1, 6, 2, 8, 5, 9, 10, 7]
+
+
+       int arr [] = new int [liste.size()]; // burada tekrar shuffle edilmiş liste elamanlarını array'in içine atıyorum ki
+       										// Array'in binarySearch metodunu kullanabileyim.
+       
+       for (int i = 0; i < liste.size(); i++) {
+		
+    	   arr[i]=liste.get(i);
+	}
+       
+       
+       
+       int random = Arrays.binarySearch(arr, 5); // sorunun ikinci can alıcı noktası burası burada da binary search'e diyorum ki,
+       											// arr 'in içinde 5 elementinin indexini bul getir bana ama arr sort edilmediği 
+       											// için binarySearch her seferinde bana farklı bir index getiriyor,
+       
+       if(random < 0) {							// sorunun üçüncü önemli noktası da burası binary search bana her zaman farklı
+    	   										// bir index getiriyor ama bazen bulamadım deyip negatif döndüğü için burada
+    	   										// negatif ise eksi bir ile çarparak yine pozitif yapıyoruz
+    	   random*=(-1);
+    	   System.out.println(random);
+       }else {
+    	   System.out.println(random); // sonuç olarak bize her zaman girilen değere kadar olan rakamlardan bir tanesini
+    	   								// random olarak döndürüyor.
+       }
      
+        //System.out.println("After Shuffle"+Arrays.toString(arr));
+        
+       
+        
+        
+       
         
         
         

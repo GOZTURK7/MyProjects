@@ -31,7 +31,7 @@ public class changeArray {
        Result böyle olmalı --> : Peach , Berry , Apple , WaterMelon , Apple
 
        Arrayi print edin
-
+       
      */
     public static void main(String[] args) {
 
@@ -46,7 +46,7 @@ public class changeArray {
         System.out.println(Arrays.toString(UseThisArray));
         
         for (int i = 0; i < UseThisArray.length; i++) {
-			if (UseThisArray[i].equals("Orange")) {
+			if (UseThisArray[i].equalsIgnoreCase("Orange")) {
 				UseThisArray[i]="Apple";
 			}
 		}System.out.println(Arrays.toString(UseThisArray));
