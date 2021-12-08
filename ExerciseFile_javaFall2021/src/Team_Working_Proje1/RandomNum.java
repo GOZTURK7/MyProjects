@@ -42,10 +42,10 @@ public class RandomNum {
        
         //  code Start here don't change before this line
         // kodu burdan başlatın ve bu satırdan önceki kodları değiştirmeyin
-
+        
        List<Integer> liste = new ArrayList<>();
        
-       for (int i = 0; i <= max; i++) {
+       for (int i = 0; i < max; i++) {
 		
     	   liste.add(i);
 	}
@@ -84,10 +84,7 @@ public class RandomNum {
         //System.out.println("After Shuffle"+Arrays.toString(arr));
         
        
-        
-        
        
-        
         
         
         

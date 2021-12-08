@@ -30,25 +30,22 @@ public class Kitapcı_Main {
 		 * 
 		 * 
 		 */
-		Kitapcı_KitapEkle kitap = new Kitapcı_KitapEkle();
+		//Kitapcı_KitapEkle kitap = new Kitapcı_KitapEkle();
 
 		
 		menu();
 		
-		numaraIleKitap();
 		
-		Kitapcı_KitapEkle.kitapEkle();
-		
-		
-	}
-
-	private static void numaraIleKitap() {
-
-
-	System.out.println(Kitapcı_KitapEkle.liste);
+	Kitapcı_KitapEkle.kitapEkle();
 	
+	Kitapcı_KitapEkle.kitapNoIleKitap();
+	
+	Kitapcı_KitapEkle.bilgiIleKitap();
+
+		
 		
 	}
+
 
 	private static void menu() {
 		
