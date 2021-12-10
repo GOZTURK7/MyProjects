@@ -1,4 +1,4 @@
-package Kullanıslı_Yöntemler;
+package Kullanıslı_Yöntemler;
 
 import java.text.DecimalFormat;
 import java.text.Format;

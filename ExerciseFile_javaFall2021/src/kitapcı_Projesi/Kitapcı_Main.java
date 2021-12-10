@@ -58,9 +58,9 @@ public class Kitapcı_Main {
 				System.out.println("Lütfen geçerli bir işlem numarası girin.");
 				break;
 			}
-		  scan.close();
+
 		} while (flag == true);
-		
+
 	}
 
 	private static void menu() {
@@ -75,6 +75,5 @@ public class Kitapcı_Main {
 				"	6-cikis ");
 
 	}
-
 
 }

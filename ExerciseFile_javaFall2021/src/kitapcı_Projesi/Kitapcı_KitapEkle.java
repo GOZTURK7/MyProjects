@@ -8,7 +8,6 @@ public class Kitapcı_KitapEkle {
 
 	public static int count = 1000;
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static List<EklenenKitaplar> liste = new ArrayList();
 
 	public static List<EklenenKitaplar> kitapEkle() {
@@ -17,21 +16,24 @@ public class Kitapcı_KitapEkle {
 		do {
 			Scanner scan = new Scanner(System.in);
 
-			System.out.println("Lütfen Kitap adını, yazarını ve fiyatını giriniz\n"
-					+ "Kitap Ekleden Çıkmak için 0'a basınız:");
+			System.out.println("Lütfen Kitap adını, yazarını ve fiyatını giriniz\n\n"
+					+ "Kitap Ekleden Çıkmak için 0'a basınız:\n");
+			System.out.print("Kitap Adı giriniz:");
 			String kitapAd = scan.nextLine();
 			if (kitapAd.equals("0")) {
 				flag=false;
 				break;
 			}
+			System.out.print("Yazar adı griniz:");
 			String yazarAd = scan.nextLine();
+			System.out.print("Fiyat griniz:");
 			int fiyat = scan.nextInt();
 
 			EklenenKitaplar eklenenKitap = new EklenenKitaplar(count, kitapAd, yazarAd, fiyat);
 			liste.add(eklenenKitap);
-			System.out.println("Kitap Başarıyla Eklendi");
+			System.out.print("Kitap Başarıyla Eklendi\n\n");
 			count++;
-			scan.close();
+
 			
 		}while(flag);
 		return liste;
@@ -41,12 +43,11 @@ public class Kitapcı_KitapEkle {
 
 	public static void kitapNoIleKitap() {
 
-		@SuppressWarnings("unused")
 		boolean flag = true;
 		do {
 		Scanner scan = new Scanner(System.in);
 
-		System.out.println("Lütfen Kitap No giriniz: \n\"Kitap No ile Sorgulamdan çıkmak için 0'a basınız: ");
+		System.out.println("Lütfen Kitap No giriniz: \n\"Kitap No ile Sorgulamdan çıkmak için 0'a basınız: \n");
 		int kitapNu = scan.nextInt();
 
 		if (kitapNu==0) {
@@ -66,9 +67,8 @@ public class Kitapcı_KitapEkle {
 			}
 			
 		}if (kitapVarMi==false) {
-			System.out.println("Lütfen Geçerli Bir Kitap Numarası Girin: ");
+			System.out.println("Lütfen Geçerli Bir Kitap Numarası Girin: \n");
 		}
-		scan.close();
 		
 		}while(true);
 
@@ -104,7 +104,7 @@ public class Kitapcı_KitapEkle {
 			case "3":
 				System.out.print("Lütfen Kitap Fiyatını Giriniz:");
 				fiyat = scan.nextInt();
-				@SuppressWarnings("unused") String a = scan.nextLine(); // DUMMY NEXTINT() DEN KURTULMAK İÇİN
+				String a = scan.nextLine(); // DUMMY NEXTINT() DEN KURTULMAK İÇİN
 				flag=false;
 				break;
 			default:
@@ -137,7 +137,6 @@ public class Kitapcı_KitapEkle {
 	
 			System.out.println("Başka Kitap Sorgulamak İster Misiniz? e/h");
 			String isFinish = scan.next();
-			@SuppressWarnings("unused")
 			String a = scan.nextLine(); // DUMMY KUKLA NEXT()'TEN KURTULMAK İÇİN
 
 			if (isFinish.equalsIgnoreCase("h")) {
@@ -146,7 +145,6 @@ public class Kitapcı_KitapEkle {
 		
 
 		}while(true);
-		scan.close();
 	}
 
 	public static void numaraIleKitapSil() {
@@ -174,7 +172,7 @@ public class Kitapcı_KitapEkle {
 			if (sil == false) {
 				System.out.println("silmek için Geçerli bir veri girin");
 			}
-			scan.close();
+
 		}
 	}
 

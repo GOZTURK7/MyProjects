@@ -53,7 +53,7 @@ public class FibonacciDizisi {
 					
 					if(i==j){
 						
-						break;
+						continue;
 					}else if(n[i]==n[j]){
 						flag=true;
 						break;
