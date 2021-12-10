@@ -13,7 +13,9 @@ public class Ustabasi extends Isci {
 
 		Ustabasi ust = new Ustabasi();
 		
-		
+		// Java'da her class oluşturulduğunda otomatik olarak default consturctor oluştuğu gibi
+		// Child Class'ta oluşturulan her bir constructor'ın ilk satırında gizli super() constructor
+		// oluşturur.
 		
 		
 		

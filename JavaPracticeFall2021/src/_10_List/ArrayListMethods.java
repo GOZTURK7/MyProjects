@@ -189,9 +189,9 @@ public class ArrayListMethods {
 	        System.out.println(name3.equals(name4) + "\n");// name3  name4 ile tıpatıp aynı? -->true
 	        System.out.println("******** list'i Array'a çevirme : toArray() *********");
 	        //list'i Array'a çevirme : toArray();
-	        //1. Yontem: toArray() methodu'nun icinde parametre olarak new String[0] kullaniniz
-	        String arr[] = listIsimler.toArray(new String[0]);//arr adında String tipinde bir array tanımladık.isimlerden(List) toArray ile yeni String tipi obj değerleri atadık
-	        System.out.println("listIsimler'in array hali: "+Arrays.toString(arr));//[CEMAL, Reha, ZEHRA, ahmet, ahsen]
+	        //1. Yontem: toArray() methodu'nun icinde parametre olarak new String [0] kullaniniz
+	        String arr[] = listIsimler.toArray(new String [0]);//arr adında String tipinde bir array tanımladık.isimlerden(List) toArray ile yeni String tipi obj değerleri atadık
+	        //System.out.println("listIsimler'in array hali: "+Arrays.toString(arr));//[CEMAL, Reha, ZEHRA, ahmet, ahsen]
 	        //2. Yontem: Olusturdugunuz array'in data type'ini Object olarak secilir
 	        //Object class, Java'da butun class'larin parent'idir.Yani Object class ortak atadir.
 	        //Object class, Java'da parent'i olmayan tek class'dir.
