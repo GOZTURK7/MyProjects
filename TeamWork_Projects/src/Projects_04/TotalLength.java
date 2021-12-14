@@ -38,4 +38,5 @@ public class TotalLength {
        NOT : EĞER SONUÇ 0'A EŞİT OLURSA -1 İLE DEĞİŞTİR
 
      */
+ 
 }

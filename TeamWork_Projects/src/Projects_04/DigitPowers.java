@@ -39,6 +39,5 @@ public class DigitPowers {
          result  354 olmalı
 
       */
-}
 
-       
+}   

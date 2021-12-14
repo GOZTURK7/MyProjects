@@ -22,8 +22,8 @@ public class C02_Setter {
 		ogr1.setNot(50);
 		
 		System.out.println(ogr1.isGecerMi()); // true,
-		
-		
+			
+		System.out.println(ogr1.getAdSoyad());
 	}
 
 }
