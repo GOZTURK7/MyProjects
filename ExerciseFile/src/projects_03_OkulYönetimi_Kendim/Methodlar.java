@@ -22,7 +22,7 @@ public class Methodlar {
 
 		System.out.println("\t====================================\n" + "	 ÖĞRENCİ VE ÖĞRETMEN YÖNETİM PANELİ\n"
 				+ "	====================================\n" + "	 1- ÖĞRENCİ İŞLEMLERİ\n"
-				+ "	 2- ÖĞRETMEN İŞLEMLERİ\n" + "	 Q- ÇIKIŞ\n" + "");
+				+ "	 2- ÖĞRETMEN İŞLEMLERİ\n" + "	 O- ÇIKIŞ\n" + "");
 
 		System.out.print("Lütfen bir işlem seçiniz: ");
 		int islem = Integer.parseInt(scan.next().toUpperCase());
@@ -68,16 +68,15 @@ public class Methodlar {
 			arama();
 			break;
 		case 3:
-			//listeleme();
+			listeleme();
 			break;
 		case 4:
-			//silme();
+			silme();
 			break;
 		case 5:
-			//anaMenu();
+			anaMenu();
 			break;
 		case 0:
-
 			cıkıs();
 			break;
 		default:
@@ -88,17 +87,94 @@ public class Methodlar {
 
 	}
 
+	private static void silme() {
+		if(secilenKisi.equals("Ogrenci")) {
+			System.out.print("Silmek İstediğiniz Öğrencinin Kimlik Numarasını Girin: ");
+			int araOgrenciKimlik =scan.nextInt();
+			for (Ogrenci k : listeOgrenci) {
+				if (k.getKimlikNo()==araOgrenciKimlik) {
+					listeOgrenci.remove(k);
+					break; // buraya break koymazsak silme işleminden sonra liste uzunluğu for each bitmeden değiştiği için 
+					//java.util.ConcurrentModificationException hataası alıyoruz o yüzden break koymalıyız eğer 
+					// bir iterator'e ekleme veya silme gibi uzunluğunu değiştirecek bir işlem yapacaksak,
+					
+				}
+				
+			}
+		}
+		
+		if(secilenKisi.equals("Ogretmen")) {
+			System.out.print("Silmek İstediğiniz Öğretmenin Kimlik Numarasını Girin: ");
+			int araOgretmenKimlik =scan.nextInt();
+			for (Ogretmen k : listeOgretmen) {
+				if (k.getKimlikNo()==araOgretmenKimlik) {
+					listeOgretmen.remove(k);
+					break;
+					
+				}
+				
+			}
+		}
+		islemler();
+		
+		
+	}
+
+	private static void anaMenu() {
+		menu();
+		
+	}
+
+	private static void listeleme() {
+		
+		System.out.println("***************** ÖĞRETMEN LİSTESİ *****************");
+		System.out.println();
+		for (Ogretmen Ogretmen : listeOgretmen) {
+			System.out.println(Ogretmen.toString());
+			
+		}
+		
+		System.out.println("***************** ÖĞRENCİ LİSTESİ *****************");
+		System.out.println();
+		for (Ogrenci Ogrenci : listeOgrenci) {
+			System.out.println(Ogrenci.toString());
+		}
+		islemler();
+		
+
+		
+	}
+
 	private static void arama() {
 		System.out.println("************* "+secilenKisi + " arama sayfası ******************");
 		
 		boolean kontrol = true;
-if(secilenKisi.equals("Ogrenci")) {
-			System.out.println("aradığınız ogrenci kimlikNo giriniz:");
-			int araOgrenciKimlik =scan.nextInt();
+		if(secilenKisi.equals("Ogrenci")) {
+					System.out.print("Aradığınız Öğrencinin Kimlik Numarasını Girin: ");
+					int araOgrenciKimlik =scan.nextInt();
+					//scan.nextLine();
+					for (Personel k : listeOgrenci) {
+						if (k.getKimlikNo()==araOgrenciKimlik) {
+							System.out.println("Aradığınız Öğrenci "+k.toString()); 
+							kontrol=false;
+							break;
+						}else {
+							kontrol=false;
+							break;
+						}
+					}if(kontrol==true) {
+						System.out.println("Aradığınız kişi bulunamadı");
+					}
+					
+				}
+		
+		if(secilenKisi.equals("Ogretmen")) {
+			System.out.print("Aradığınız Öğretmenin Kimlik Numarasını Girin: ");
+			int araOgretmenKimlik =scan.nextInt();
 			//scan.nextLine();
-			for (Personel k : listeOgrenci) {
-				if (k.getKimlikNo()==araOgrenciKimlik) {
-					System.out.println("Aradığınız Öğrenci"+k.getAd() + k.getSoyAd());
+			for (Personel k : listeOgretmen) {
+				if (k.getKimlikNo()==araOgretmenKimlik) {
+					System.out.println("Aradığınız Öğretmen "+k.toString()); 
 					kontrol=false;
 					break;
 				}else {
@@ -110,6 +186,7 @@ if(secilenKisi.equals("Ogrenci")) {
 			}
 			
 		}
+		islemler();
 	}
 	
 
@@ -126,29 +203,34 @@ if(secilenKisi.equals("Ogrenci")) {
 		}
 		System.out.println(secilenKisi + " Bilgilerini Giriniz: ");
 		System.out.print(secilenKisi + " Adı: ");
+		scan.nextLine();
 		String ad = scan.nextLine();
-		String dummy = scan.nextLine(); // DUMMY 
+
 		System.out.print(secilenKisi + " Soyadı: ");
-		String soyAd = scan.nextLine();
+		String soyAd = scan.next();
+
 		System.out.print(secilenKisi + " Kimlik No: ");
 		int kimlikNo = scan.nextInt();
+
 		System.out.print(secilenKisi + " Yaşı: ");
 		int yas = scan.nextInt();
+
 		System.out.print(secilenKisi + " " + sicilNumara + ": ");
 		int sicilnumara = scan.nextInt();
+		
 		System.out.print(secilenKisi + " " + bolumSinif + ": ");
 		String bolumsinif = scan.next();
-		//scan.nextLine(); // dummy 
 
 		if (secilenKisi.equals("Ogrenci")) {
 			Ogrenci ogc = new Ogrenci(ad, soyAd, kimlikNo, yas, sicilnumara, bolumsinif);
 			listeOgrenci.add(ogc);
-			System.out.print("Öğrenci Sisteme Kaydedildi.\r");
+			System.out.println("Öğrenci Sisteme Kaydedildi.\r");
 			System.out.println(ogc.toString());
 			islemler();
 		} else {
 			Ogretmen ogr = new Ogretmen(ad, soyAd, kimlikNo, yas, sicilnumara, bolumsinif);
 			listeOgretmen.add(ogr);
+			System.out.println(ogr.toString());
 			System.out.println("Öğretmen Sisteme Kaydedildi.");
 			islemler();
 		}

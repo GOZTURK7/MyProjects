@@ -22,9 +22,11 @@ public class Ogretmen extends Personel{
 
 	@Override
 	public String toString() {
-		return "Ogretmen [bolum=" + bolum + ", sicilNo=" + sicilNo + "]";
+		return "Personel [ad=" + super.getAd() + ", soyAd=" + super.getSoyAd() + ", kimlikNo=" + super.getKimlikNo() + ", yas=" + super.getYas() +", bolum=" + bolum + ", sicilNo=" + sicilNo+ "]";
 	}
 
+
+	
 
 
 

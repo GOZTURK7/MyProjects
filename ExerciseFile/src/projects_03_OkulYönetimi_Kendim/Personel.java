@@ -19,7 +19,7 @@ public class Personel {
 		
 	}
 	
-	public Personel(String ad, String SoyAd, int kimlikNd, int yas) {
+	public Personel(String ad, String soyAd, int kimlikNo, int yas) {
 		
 		this.ad=ad;
 		this.soyAd=soyAd;
