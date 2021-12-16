@@ -1,4 +1,4 @@
-package day40;
+package day40_Exeption;
 
 public class C01_Exeption {
 
@@ -18,7 +18,7 @@ public class C01_Exeption {
 			//System.out.println(e.getMessage());
 			e.printStackTrace();
 			//java.lang.ArithmeticException: / by zero
-			//			at day40.C01_Exeption.main(C01_Exeption.java:13)
+			//			at day40_Exeption.C01_Exeption.main(C01_Exeption.java:13)
 		}
 		
 		

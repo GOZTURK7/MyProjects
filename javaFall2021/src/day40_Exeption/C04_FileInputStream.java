@@ -1,4 +1,4 @@
-package day40;
+package day40_Exeption;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,7 +10,7 @@ public class C04_FileInputStream {
 
 		// Java'da bir dosyaya ulaşmak istediğimizde FileInputStream class'ından yardım alırız.
 		
-		FileInputStream fis = new FileInputStream("src/day40/yazi.txt");
+		FileInputStream fis = new FileInputStream("src/day40_Exeption/yazi.txt");
 		
 		
 		/* Java Bu kodda olası bir problem öngörüyor ve bu probleme karşı ne yapması gerektiğini

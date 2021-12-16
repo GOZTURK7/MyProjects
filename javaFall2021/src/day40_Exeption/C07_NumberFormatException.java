@@ -1,4 +1,4 @@
-package day40;
+package day40_Exeption;
 
 public class C07_NumberFormatException{
 

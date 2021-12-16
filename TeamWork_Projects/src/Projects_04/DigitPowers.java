@@ -40,4 +40,12 @@ public class DigitPowers {
 
       */
 
+	
+	public static void main(String[] args) {
+		
+		
+		
+	}
+	
+	
 }   
