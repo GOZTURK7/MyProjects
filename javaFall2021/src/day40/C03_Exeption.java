@@ -25,7 +25,7 @@ public class C03_Exeption {
 		System.out.println("Girdiğiniz index'teki element : "+arr[index]);
 		
 		}catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("girdiğinz index array'de yok"+e);
+			System.out.println("girdiğinz index array'de yok");
 			
 		}catch(InputMismatchException e) {
 			System.out.println("Girdiğiniz index pozitif tam sayı olmalı");

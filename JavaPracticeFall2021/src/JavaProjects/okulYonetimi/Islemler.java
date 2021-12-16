@@ -1,5 +1,9 @@
 package JavaProjects.okulYonetimi;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /*
 	BİR OKUL YÖNETİM PLATFORMU KODALYINIZ.
 
@@ -37,10 +41,75 @@ package JavaProjects.okulYonetimi;
 
  */
 
-
-
 public class Islemler {
 
+	List<Kisi> ogrenciList = new ArrayList<Kisi>();
+	List<Kisi> ogretmenList = new ArrayList<Kisi>();
+	static Scanner scan = new Scanner(System.in);
+	static String kisiTuru;
 
+	public static void anaMenu() {
+		System.out.println("====================================\nOGRENCI VE OGRETMEN YONETIM PANELI\n"
+				+ "====================================\n" + "1- OGRENCI ISLEMLERI\n2- OGRETMEN ISLEMLERI\nQ- CIKIS");
+		System.out.print("isleminiz seciniz : ");
+		String secim = scan.next().toUpperCase();
+		switch (secim) {
+		case "1":
+			kisiTuru = "OGRENCİ";
+			islemMenusu();
+			break;
+		case "2":
+			kisiTuru = "OGRETMEN";
+			islemMenusu();
+			break;
+		case "Q":
+			cıkıs();
+			break;
+		default:
+			System.out.println("hatali giris yaptiniz !!!");
+			anaMenu();
+			break;
+		}
+	}
 
+	private static void cıkıs() {
+		System.out.println("uygulamayi kullandiginiz için thanks bro  :)");
+	}
+
+	private static void islemMenusu() {
+		System.out.println("3. Seçilen Kişi türüne göre aşağıdaki işlemleri gösteren bir alt menü daha gösterilsin.\r\n"
+				+ "============= İŞLEMLER =============\r\n" + "     1-EKLEME\r\n" + "     2-ARAMA\r\n"
+				+ "     3-LİSTELEME\r\n" + "     4-SİLME\r\n" + "     0-ÇIKIŞ");
+
+		System.out.println("islem tercihinizi giriniz : ");
+		int islemTercihi = scan.nextInt();
+		switch (islemTercihi) {
+		case 0:
+			anaMenu();
+			break;
+		case 1:
+			ekleme();
+			islemMenusu();
+			break;
+		case 2:
+			// arama();
+			islemMenusu();
+			break;
+		case 3:
+			// listeleme();
+			islemMenusu();
+			break;
+		case 4:
+			// silme();
+			islemMenusu();
+			break;
+		default:
+			System.out.println("hatali giris yaptiniz :( ");
+			islemMenusu();
+			break;
+		}
+	}
+
+	private static void ekleme() {
+	}
 }
