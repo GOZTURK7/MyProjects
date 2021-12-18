@@ -46,7 +46,7 @@ public class HastaneRunner {
 	 */
 
 	private static Hastane hastane1 = new Hastane();
-	static String hastaDurumu = "Migren";
+	static String hastaDurumu = "Diabet";
 	public static void main(String[] args) {
 		//String hastaDurumu = "Alerji";
 		String unvan = doktorUnvan(hastaDurumu);

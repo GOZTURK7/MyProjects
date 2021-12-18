@@ -11,3 +11,5 @@ public class VeriBankasi {
 	static int [] hastaIDleri = {111,222,333,444,555,666};
 
 }
+
+

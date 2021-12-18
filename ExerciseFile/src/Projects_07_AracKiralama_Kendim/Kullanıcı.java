@@ -12,7 +12,8 @@ public class Kullanıcı {
     String alisSaati;
     String teslimGunu;  //(MM,dd--> ay gun formatında olmalı)
     String teslimSaati;
-	@Override
+	
+    @Override
 	public String toString() {
 		return "Kullanıcı [adıSoyadı=" + adıSoyadı + ", yas=" + yas + ", kimlikNo=" + kimlikNo + ", kartNo=" + kartNo
 				+ ", alinacakSehir=" + alinacakSehir + ", alinacakGun=" + alinacakGun + ", alisSaati=" + alisSaati

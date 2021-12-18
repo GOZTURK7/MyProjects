@@ -18,20 +18,16 @@ public class KiralamaRunner {
 
 	public static void main(String[] args) {
 		
-		
-//		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMM d uuuu");
-//		DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("HH : mm");
-//
-//		LocalDateTime dateTime = LocalDateTime.now();
-//		
-//		System.out.println(dtf.format(dateTime));
-//		System.out.println(dtf2.format(dateTime));
-
-		while(cıkıs.equalsIgnoreCase("H")) {
+		do {
 		
 		System.out.println("======== ARAÇ KİRALAMA SİSTEMİNE HOŞGELDİNİZ =======\n");
 		System.out.print("Çıkış için E' ye, Devam Etmek için H'ye basınız: \n");
 		cıkıs=scan.next();
+		if (!cıkıs.equalsIgnoreCase("H")) {
+			System.out.println("YİNE BEKLERİZ .....");
+			break;
+			
+		}
 		aracEkle(araclar);
 
 		kampanyaliAracListele(araclar);
@@ -42,7 +38,7 @@ public class KiralamaRunner {
 		
 		kullanıcıBilgileriEkle(kullanıcılar);
 		
-		}
+		}while(cıkıs.equalsIgnoreCase("H"));
 
 	}
 
@@ -62,7 +58,6 @@ public class KiralamaRunner {
 
 		DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("MMM/d/uuuu");
 		DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("HH:mm");
-
 		LocalDateTime dateTime = LocalDateTime.now();
 				
 		System.out.println("Bilgilerinizi Girin :");

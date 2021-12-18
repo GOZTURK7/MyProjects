@@ -1,5 +1,6 @@
 package Projects_07_AracKiralama_Kendim;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AracVeriTabanı {
@@ -10,9 +11,7 @@ public class AracVeriTabanı {
    static List<String> vites =List.of("Manuel", "Otomatik");
    static List<Double> gunlukUcret=List.of(100.0, 120.0, 150.0, 300.0, 300.0);
 
-   
-	
-	
-	
+     
+
 
 }
