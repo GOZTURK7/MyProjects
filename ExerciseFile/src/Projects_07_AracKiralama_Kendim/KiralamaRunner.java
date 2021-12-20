@@ -9,21 +9,28 @@ import java.util.List;
 import java.util.Scanner;
 
 public class KiralamaRunner {
+	
+	
 
 	static String cıkıs="H";
+	
 	static Arac secim;
+	
 	static Scanner scan = new Scanner(System.in);
+	
 	static List<Arac> araclar = new ArrayList<>();
+	
 	static List<Kullanıcı> kullanıcılar = new ArrayList<>();
+	
 
 	public static void main(String[] args) {
 		
 		do {
 		
 		System.out.println("======== ARAÇ KİRALAMA SİSTEMİNE HOŞGELDİNİZ =======\n");
-		System.out.print("Çıkış için E' ye, Devam Etmek için H'ye basınız: \n");
+		System.out.print("Çıkış için Ç' ye, Devam Etmek için D'ye basınız: \n");
 		cıkıs=scan.next();
-		if (!cıkıs.equalsIgnoreCase("H")) {
+		if (!cıkıs.equalsIgnoreCase("D")) {
 			System.out.println("YİNE BEKLERİZ .....");
 			break;
 			
@@ -38,7 +45,7 @@ public class KiralamaRunner {
 		
 		kullanıcıBilgileriEkle(kullanıcılar);
 		
-		}while(cıkıs.equalsIgnoreCase("H"));
+		}while(cıkıs.equalsIgnoreCase("D"));
 
 	}
 

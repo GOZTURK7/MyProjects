@@ -44,11 +44,10 @@ public class HastaneRunner {
 		 Son olarak return hasta;
 	 * 
 	 */
-
+	//Scanner scan = new Scanner(System.in);
 	private static Hastane hastane1 = new Hastane();
-	static String hastaDurumu = "Diabet";
+	static String hastaDurumu = "Allerji";
 	public static void main(String[] args) {
-		//String hastaDurumu = "Alerji";
 		String unvan = doktorUnvan(hastaDurumu);
 		
 		hastane1.setDoktor(doktorBul(unvan)); 
@@ -57,7 +56,7 @@ public class HastaneRunner {
 		
 		System.out.println(doktorBul(unvan).toString());
 		
-		System.out.println(hastaBul(hastaDurumu));
+		System.out.println(hastaBul(hastaDurumu).toString());
 		
 
 	}
