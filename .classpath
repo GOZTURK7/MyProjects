@@ -5,7 +5,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="ExerciseFile_javaFall2021/src"/>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="java-practice-batch-11-master/src"/>
 	<classpathentry kind="src" path="Java-summer-2021-master/src"/>
 	<classpathentry kind="src" path="javaFall2021/src"/>
