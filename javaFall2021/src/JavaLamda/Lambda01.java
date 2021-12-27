@@ -112,7 +112,7 @@ public class Lambda01 {
 	    //Functional Programming ile list elemanlarinin  tek olanalrini veya 20 dan buyuk
 	    // olanlarını ayni satirda aralarina bosluk birakarak yazdiriniz
 	    public static void tekYirmidenbuyukPrint(List<Integer> list) {
-	        list.stream().filter(t ->t%2 == 1 ||t>20).forEach(Lambda01::printEl);
+	        list.stream().filter(t ->t%2 == 1 || t>20).forEach(Lambda01::printEl);
 
 	    }
 	    //Functional Programming ile list elemanlarinin  cift olanlarinin
