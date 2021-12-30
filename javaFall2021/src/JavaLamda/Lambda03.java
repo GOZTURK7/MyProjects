@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Stream;
 
 import day20_scope.StaticVar;
 
@@ -42,6 +43,12 @@ public class Lambda03 {
 		System.out.println();
 		System.out.println("*******");
 		karakteriEnBuyukEl(list);
+		System.out.println();
+		System.out.println("*******");
+		karakteriEnBuyukEl2(list);
+		System.out.println();
+		System.out.println("*******");
+		ilkElemanHaricSonHarfSirali(list);
 		
 		
 		
@@ -164,8 +171,47 @@ public class Lambda03 {
     		sorted(Comparator.comparing(t-> t.toString().length()). // length karakter uzunluğuna göre sıraladı k ->b
     				reversed()).
     		findFirst());
+    
+    System.out.println(list.
+    		stream().
+    		sorted(Comparator.comparing(t-> t.toString().length()). // length karakter uzunluğuna göre sıraladı k ->b
+    				reversed()).
+    		limit(1)); // ilk elemana kadar olan ile sınırladı limitledi . ama yazdıramadık aşağıda nasıl yazılır var sonraki
+//    örnekte
     	
     }
+    
+    public static void karakteriEnBuyukEl2(List<String> list) {
+    	
+       Stream<String> sonIsım = list.
+        		stream().
+        		sorted(Comparator.comparing(t-> t.toString().length()). // length karakter uzunluğuna göre sıraladı k ->b
+        				reversed()).
+        		limit(5);  // limit'ten çıkan veriler heniz bir datadır ve limit akış halinde olduğu için 
+//       bunu önce bir array'e çevirip sonra bu array'i yazdırmamız gerekli, yoksa yazdıramayız.
+//       sonIsım.toArray() ile array'e çevirip sonra yazdırıyoruz aşağıdaki gibi.
+//         
+       System.out.println(Arrays.toString(sonIsım.toArray()));
+       
+    }
+    
+//    TASK 10: LİST elemanlarını son harfe göre sıralayıp ilk eleman hariç kalan elemanları yazdırınız:
+    
+    public static void ilkElemanHaricSonHarfSirali (List<String> list) {
+    	
+    	
+    	list.
+    	stream().
+    	sorted(Comparator.
+    			comparing(t-> t.toString().charAt(t.length()-1))).
+    	skip(3). // baştan birinciyi atlar sonrakileri alır 3 yazsaydık ilk üç elemanı 5 yazsaydık ilk 5 elemanı atlar sonrakileri alırdı.
+    	forEach(System.out :: println);
+    	
+    }
+    
+    
+    
+    
     
     
 }
