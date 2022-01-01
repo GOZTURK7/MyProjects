@@ -37,7 +37,10 @@ public class Lambda06 {
 	    
 	    //TASK 04 --> haluk.txt dosyasinda "basari" kelimesinin kac satirda gectiginiz yazdiriniz
 	    System.out.println("\n*** gokhan.txt dosyasinda basari kelimesinin kac satirda gectiginiz yazdiriniz -->  ");
-	    System.out.println(Files.lines(Paths.get("src/JavaLamda/gokhan")).filter(t->t.contains("başarı")).count());
+	    System.out.println(Files.
+	    		lines(Paths.get("src/JavaLamda/gokhan")).
+	    		filter(t->t.contains("başarı")).
+	    		count());
 	    
 	    
 	    
@@ -48,7 +51,7 @@ public class Lambda06 {
 	    System.out.println("\n*** gokhan.txt dosyasindaki farkli kelimeleri  yazdiriniz. -->  ");
 	    System.out.println(Files.lines(Paths.get("src/JavaLamda/gokhan")).
 	    map(t->t.split(" ")). // " "'a göre satırlardaki elemanları parçalayıp array'e ataadı.
-	    flatMap(Arrays:: stream). // Arrays clasından stream() methodu ile array elemanlarından yeni bir akış oluşturdu.
+	    flatMap(Arrays::stream). // Arrays clasından stream() methodu ile array elemanlarından yeni bir akış oluşturdu.
 	    distinct(). // Yeni akıştaki arrray elemanları tekrarsız hale getirildi.
 	    collect(Collectors.toList())); // yeni akıştaki tekrarsız olan array elemanları list'e atandı.
 
@@ -57,12 +60,31 @@ public class Lambda06 {
 	    
 	    
 	    
-	    //TASK 06 --> haluk.txt dosyasindaki tum kelimeleri natural order  yazdiriniz.
-	    System.out.println("\n*** haluk.txt dosyasindaki tum kelimeleri natural order  yazdiriniz. -->  ");
-	    //TASK 07 --> haluk.txt dosyasinda "basari" kelimesinin kac kere gectigini buyuk harf kucuk harf bagımsız yaziniz.
-	    System.out.println("\n*** haluk.txt dosyasinda basari kelimesinin kac kere gectigini  yazdiriniz. -->  ");
-	    //TASK 08 --> haluk.txt dosyasinda "a" harfi gecen kelimelerin sayisini ekrana yazdiran programi yaziniz
-	    System.out.println("\n*** haluk.txt dosyasinda a harfi gecen kelimelerin sayisini ekrana yazdiran programi yazdiriniz. -->  ");
+	    //TASK 06 --> gokhan.txt dosyasindaki tum kelimeleri natural order  yazdiriniz.
+	    System.out.println("\n*** gokhan.txt dosyasindaki tum kelimeleri natural order  yazdiriniz. -->  ");
+	    Files.lines(Paths.get("src/JavaLamda/gokhan")).
+	    map(t->t.split(" ")).flatMap(Arrays::stream).sorted().forEach(t->System.out.println(t+" "));
+	    
+	    
+	    //TASK 07 --> gokhan.txt dosyasinda "ozturk" kelimesinin kac kere gectigini buyuk harf kucuk harf bagımsız yaziniz.
+	    System.out.println("\n*** gokhan.txt dosyasinda basari kelimesinin kac kere gectigini  yazdiriniz. -->  ");
+	    
+	   System.out.println(Files.lines(Paths.get("src/JavaLamda/gokhan"))
+	    .map(t->t.split(" ")).flatMap(Arrays::stream)
+	    .filter(t->t.equals("ozturk")).count());
+	    
+	    
+	    
+	    //TASK 08 --> gokhan.txt dosyasinda "a" harfi gecen kelimelerin sayisini ekrana yazdiran programi yaziniz
+	    System.out.println("\n*** gokhan.txt dosyasinda a harfi gecen kelimelerin sayisini ekrana yazdiran programi yazdiriniz. -->  ");
+	    
+	    long sonuc = Files.lines(Paths.get("src/JavaLamda/gokhan")).map(t->t.split(" "))
+	    .flatMap(Arrays :: stream).filter(t->t.contains("a")).count();
+	    
+	    System.out.println(sonuc);
+	    
+	    
+	    
 	    //TASK 09 --> haluk.txt dosyasinda icinde "a" harfi gecen kelimeleri yazdiriniz
 	    System.out.println("\n*** haluk.txt dosyasinda a harfi gecen kelimeler yazdiriniz. -->  ");
 	    //TASK 10 --> haluk.txt dosyasinda kac /farklı harf kullanildigini yazdiriniz
