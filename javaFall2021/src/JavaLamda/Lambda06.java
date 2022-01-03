@@ -85,15 +85,49 @@ public class Lambda06 {
 	    
 	    
 	    
-	    //TASK 09 --> haluk.txt dosyasinda icinde "a" harfi gecen kelimeleri yazdiriniz
-	    System.out.println("\n*** haluk.txt dosyasinda a harfi gecen kelimeler yazdiriniz. -->  ");
-	    //TASK 10 --> haluk.txt dosyasinda kac /farklı harf kullanildigini yazdiriniz
-	    System.out.println("\n*** haluk.txt dosyasinda kac /farklı harf kullanildigini  yazdiriniz. -->  ");
-	    //TASK 11 --> haluk.txt dosyasinda kac farkli kelime kullanildigini yazdiriniz
-	    System.out.println("\n*** haluk.txt dosyasinda kac farkli kelime kullanildigini  yazdiriniz. -->  ");
+	    //TASK 09 --> gokhan.txt dosyasinda icinde "a" harfi gecen kelimeleri yazdiriniz
+	    System.out.println("\n*** gokhan.txt dosyasinda a harfi gecen kelimeler yazdiriniz. -->  ");
+	    
+	    Files.lines(Paths.get("src/JavaLamda/gokhan")).
+	    map(t->t.split(" ")). /// her bir satır bir string variable olarak geliyor cümleler sonra burada satırları kendi
+	    					// içinde split ile kelimelere ayırıyoruz bir array oluyorlar her bir satır ayrı ayrı,
+	    flatMap(t->Arrays.stream(t)) // burada da ayrı ayrı array olan satırların (array listlerin) elemanlarını tek bir akışa sokuyoruz.
+	    .filter(t->t.contains("a")). // şimdi elimizde 4 arrayden gelen elemanların hepsi tek bir akışta olacak şekilde var ve a içerenleri ayırıyoruz.
+	    forEach(t->System.out.println(t+" ")); // son olarak da a içeren kelimeleri yazdırmış oluyoruz.
+	    
+	    
+	    
+	    
+	    
+	    //TASK 10 --> gokhan.txt dosyasinda kac /farklı harf kullanildigini yazdiriniz
+	    System.out.println("\n*** gokhan.txt dosyasinda kac /farklı harf kullanildigini  yazdiriniz. -->  ");
+	   System.out.println(Files.lines(Paths.get("src/JavaLamda/gokhan")).
+	    map(t->t.split(" ")).
+	    flatMap(Arrays :: stream).
+	    map(t->t.split("")).
+	    flatMap(Arrays::stream).
+	    distinct().
+	    count());
+	    
+	    
+	    
+	    
+	    
+	    //TASK 11 --> gokhan.txt dosyasinda kac farkli kelime kullanildigini yazdiriniz
+	    System.out.println("\n*** gokhan.txt dosyasinda kac farkli kelime kullanildigini  yazdiriniz. -->  ");
+	    
+	  long sonuc2 =  (int) Files.lines(Paths.get("src/JavaLamda/gokhan")).
+			   map(t->t.split(" ")).
+			   flatMap(Arrays::stream).
+			   distinct().count();  //forEach(t->System.out.println(t));
 
-		
-		
+	   Files.lines(Paths.get("src/JavaLamda/gokhan")).
+	   map(t->t.split(" ")).
+	   flatMap(Arrays::stream).
+	   distinct().forEach(t->System.out.println(t));
+	  
+		System.out.println(sonuc2); // Not: !!! gokhan.txt dosyasındaki boş satırlara dikkat böyle bir soruda eğer boş satır
+		// varsa onları da ayrı bir value olarak aldığından kelime gibi sayıyor ve sonucu bir fazla verebiliyor
 		
 		
 	}

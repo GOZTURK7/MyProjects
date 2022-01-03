@@ -62,7 +62,7 @@ public class Lambda05 {
 	// Functional Programming: 2. YOL;
 		public static int topla2(int x) {
 			
-			return IntStream.rangeClosed(1, x+1).sum(); // 1,2,3,4, ....x; elemanlarının akışı for akışını IntStream ile sağladık.
+			return IntStream.rangeClosed(1, x).sum(); // 1,2,3,4, ....x; elemanlarının akışı for akışını IntStream ile sağladık.
 		}
 	
 	
