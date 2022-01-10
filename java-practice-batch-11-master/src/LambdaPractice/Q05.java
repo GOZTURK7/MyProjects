@@ -20,6 +20,10 @@ public class Q05 {
 		b=a*2;
 		
 		System.out.println(b);
+		
+
+		
+		
 
 
 	}
