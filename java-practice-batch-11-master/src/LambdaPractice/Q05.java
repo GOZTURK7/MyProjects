@@ -1,6 +1,9 @@
 package LambdaPractice;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Q05 {
@@ -8,19 +11,19 @@ public class Q05 {
 //         Tekrarlanan öğeleri konsolda yazdırın
 	
 	
-	int a = 3; 
-	static int b;
+	
 	
 	
 	public static void main(String[] args) {
 		
 		
-		int a= 4;
 		
-		b=a*2;
-		
-		System.out.println(b);
-		
+		  String arr[] = {"A", "B", "C", "B", "D", "A", "B", "B"};
+	        List<String> list = Arrays.asList(arr);
+	        list.stream()
+	                .filter(t -> Collections.frequency(list, t) > 1)
+	                .collect(Collectors.toSet())
+	                .forEach(t -> System.out.println(t));
 
 		
 		
