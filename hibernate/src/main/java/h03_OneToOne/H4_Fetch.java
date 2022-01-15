@@ -41,7 +41,7 @@ public class H4_Fetch {
 			 }
 
 		// iki tablodaki kayıtların hepsini sorgula hibernate ile
-		  List<Object[]> liste= session.createQuery("from H1_Kisi k join H2_Gunluk g on  k.kisiId=g.kisi").getResultList();
+		List<Object[]> liste= session.createQuery("from H1_Kisi k join H2_Gunluk g on  k.kisiId=g.kisi").getResultList();
 
 		liste.forEach((x)-> System.out.println(Arrays.toString(x))); 
 	
@@ -64,6 +64,17 @@ public class H4_Fetch {
 			System.out.println(Arrays.toString(each));
 			
 		} 
+		
+		
+		// ÖDEV :
+		List<Object[]> liste1 =  session.createQuery("select k.kisiAd, g.owner, k.kisiYas from H1_Kisi k join H2_Gunluk g on k.kisiId = g.kisi").getResultList();
+		for(Object[] each: liste1) {
+			System.out.println(Arrays.toString(each));
+			
+		} 
+		
+
+	
 		
 		//tx.commit();
 		
