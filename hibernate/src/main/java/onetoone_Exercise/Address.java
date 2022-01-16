@@ -15,11 +15,7 @@ public class Address {
 	
 	private String city;
 	
-	//@OneToOne(mappedBy = "adres")
-	//private Person person;
 	
-	
-
 	public Address() {
 		
 	}

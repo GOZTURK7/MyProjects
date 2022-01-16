@@ -36,7 +36,10 @@ public class H4_Fetch {
 //			System.out.println(each);
 //			
 //		}
-//		
+		
+		
+		
+		
 //		
 //		// id=50 olan kitap'ın sahibinin bilgilerini listele;
 //		
@@ -74,9 +77,9 @@ public class H4_Fetch {
 		
 		// HQL İLE TÜM KİTAPLARI SİLELİM;
 		
-		int sayi = session.createQuery("delete from H2_Kitap").executeUpdate(); // executeUpdate sayesinde silince kaç satır sildiğini return edecek
+		//int sayi = session.createQuery("delete from H2_Kitap").executeUpdate(); // executeUpdate sayesinde silince kaç satır sildiğini return edecek
 		
-		System.out.println(sayi + " KİTAP SİLİNDİ .... ");
+		//System.out.println(sayi + " KİTAP SİLİNDİ .... ");
 		
 		
 		

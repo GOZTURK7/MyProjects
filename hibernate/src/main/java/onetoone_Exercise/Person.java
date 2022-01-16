@@ -18,7 +18,6 @@ public class Person {
 	private int yas;
 	
 	@OneToOne
-	@JoinColumn(name="plaka_no")
 	private Address adres;
 	
 	

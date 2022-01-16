@@ -6,20 +6,19 @@ import java.util.List;
 
 import javax.persistence.Cacheable;
 import javax.persistence.CascadeType;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
+
 @Entity
 @Table(name="ogrenciler2")
-@Cacheable
-@Cache(region="H1_Ogrenci", usage = CacheConcurrencyStrategy.READ_WRITE)
+@Cacheable //javaya bildiriyorum cach in açıldığını
+@Cache(region="H1_Ogrenci", usage=CacheConcurrencyStrategy.READ_WRITE)//hibernate e bildiriyorum cache yi aç 
  public class H1_Ogrenci {
 	
 	@Id
@@ -83,11 +82,14 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 		this.kitapListesi = kitapListesi;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Ogrenci ogrId=" + ogrId + ", ogrAd=" + ogrAd + ", ogrNot=" + ogrNot + ", kitapListesi="
-				+ kitapListesi + "]";
+		return "Ogrenci ogrId=" + ogrId + ", ogrAd=" + ogrAd + ", ogrNot=" + ogrNot;
 	}
+//	@Override
+//	public String toString() {
+//		return "Ogrenci ogrId=" + ogrId + ", ogrAd=" + ogrAd + ", ogrNot=" + ogrNot + ", kitapListesi="
+//				+ kitapListesi + "]";
+//	}
 	
 }

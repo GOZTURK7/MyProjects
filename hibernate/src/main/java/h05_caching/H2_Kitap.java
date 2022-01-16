@@ -9,11 +9,10 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-
 @Entity
 @Table(name="kitaplar2")
 @Cacheable
-@Cache(region="H2_Kitap", usage = CacheConcurrencyStrategy.READ_WRITE)
+@Cache(region="H2_Kitap", usage=CacheConcurrencyStrategy.READ_WRITE)
 public class H2_Kitap {
 	
 	@Id
@@ -21,7 +20,7 @@ public class H2_Kitap {
 	private String isim;
 	
 	@ManyToOne
-	@JoinColumn(name="birlesme")
+	@JoinColumn(name="OGRENCİ")
 	private H1_Ogrenci ogrenci;
 
 	public H2_Kitap() {
