@@ -77,12 +77,17 @@ import javax.persistence.Table;
 	public void setKitapListesi(List<H2_Kitap> kitapListesi) {
 		this.kitapListesi = kitapListesi;
 	}
-
-
+	
 	@Override
 	public String toString() {
-		return "Ogrenci ogrId=" + ogrId + ", ogrAd=" + ogrAd + ", ogrNot=" + ogrNot + ", kitapListesi="
-				+ kitapListesi + "]";
+		return "Ogrenci ogrId=" + ogrId + ", ogrAd=" + ogrAd + ", ogrNot=" + ogrNot;
 	}
+
+
+//	@Override
+//	public String toString() {
+//		return "Ogrenci ogrId=" + ogrId + ", ogrAd=" + ogrAd + ", ogrNot=" + ogrNot + ", kitapListesi="
+//				+ kitapListesi + "]";
+//	}
 	
 }
