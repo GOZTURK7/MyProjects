@@ -3,6 +3,8 @@ package h04_OneToMany;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.EntityManagerFactory;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -12,6 +14,9 @@ public class H4_Fetch {
 
 	public static void main(String[] args) {
 
+		
+		
+		
 		Configuration con = new Configuration().
 				configure("hibernate.cfg.xml").
 				addAnnotatedClass(H1_Ogrenci.class).
@@ -26,7 +31,7 @@ public class H4_Fetch {
 		
 		
 		
-		// id = 111 olan ogrencinin tüm kitaplarını listele
+// 		id = 111 olan ogrencinin tüm kitaplarını listele
 		
 //		
 //		H1_Ogrenci ogrenci = session.get(H1_Ogrenci.class, 111);
@@ -40,7 +45,7 @@ public class H4_Fetch {
 		
 		
 		
-//		
+		
 //		// id=50 olan kitap'ın sahibinin bilgilerini listele;
 //		
 //		H2_Kitap kitap = session.get(H2_Kitap.class, 50);
@@ -103,8 +108,7 @@ public class H4_Fetch {
 				 *   */
 				
 		 
-				System.out.println(session.get(H1_Ogrenci.class, 333));
-				
+				//System.out.println(session.get(H1_Ogrenci.class, 333));
 		
 		
 		
