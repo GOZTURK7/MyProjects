@@ -55,11 +55,7 @@ class H1_Sehir {
 		
 	}
 	
-	
-	
-	
-	
-	
+
 	public H1_Sehir() {
 		
 	}
