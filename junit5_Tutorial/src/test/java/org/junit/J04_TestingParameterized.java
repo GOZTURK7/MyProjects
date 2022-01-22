@@ -2,6 +2,7 @@ package org.junit;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -46,6 +47,17 @@ public class J04_TestingParameterized {
     void testBykHrfCvr(String beklenenBykHrf, String isim){
         assertEquals(beklenenBykHrf.toUpperCase(), isim);
     }
+
+    @ParameterizedTest(name="Expected(BUYUKHARF) : {0}, actual(cevrilecek) : {1}")
+//    @CvsFileSource --> belirli bir dosyadan dataları okutarak test için parametre olarak kullanır.
+//    @CvsFileSource --> src/test/resource klasörü altına konumlanmış dosyaya direkt ulaşır.
+//    numLinesToSkip = a --> a : startline dan itibaren kalan satırlara parametre olarak method'da run edilir.
+    @CsvFileSource(resources = "/data.csv",numLinesToSkip = 1) // data.csv dosyasındaki 1. satır hariç verileri parametre olarak test methoduna run eder.
+    void bykHrfCvrFile(String cevrilecek, String bykHrf){
+        assertEquals(cevrilecek.toUpperCase(), bykHrf);
+    }
+
+
 
 
 }
