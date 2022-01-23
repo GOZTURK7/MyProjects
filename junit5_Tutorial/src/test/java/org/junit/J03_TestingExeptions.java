@@ -45,7 +45,8 @@ public class J03_TestingExeptions {
     @Test
     @DisplayName("IllegalArgumentExeption TEST")
         void testExeption03(){
-         assertThrows(IllegalArgumentException.class, ()-> yasYazdir(-2)); // passed
+         assertThrows(IllegalArgumentException.class, ()-> yasYazdir(-2)); // passed -->  '()->' bu ifade parametre almayan bir Lamnda fonksiyon yani sadece
+
 //         assertThrows(IllegalArgumentException.class, ()-> yasYazdir(12)); // failed
     }
     void yasYazdir(int yas){

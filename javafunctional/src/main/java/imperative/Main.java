@@ -40,7 +40,7 @@ public class Main {
 
     }
 
-    static class Person {
+    public static class Person {
 
         private final String name;
         private final Gender gender;
@@ -58,7 +58,7 @@ public class Main {
                     '}';
         }
     }
-    enum Gender {
+    public enum Gender {
         MALE, FEMALE
     }
 }

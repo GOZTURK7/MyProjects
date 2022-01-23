@@ -23,15 +23,15 @@ public class _Function {
 
 
         // BİFUNCTİON  takes 2 argument and produces 1 result
-       System.out.println(incrementByOneAndMultiply(4,100));
+       System.out.println(incrementByOneAndMultiply(4,100)); // normal java method
 
-
+       System.out.println(incrementByOneAndMultiplyBiFunction.apply(4,100)); // funcitoanl programmmign fonction
 
     }
 
     // FUNCTIONS
                     //parameter, ReturnType                      parameter
-    static Function<Integer, Integer> increamentByOneFunction = number -> number + 1; // aşağıdaki ile tamamen aynı
+    static Function<Integer, Integer> increamentByOneFunction = (number) -> number + 1; // aşağıdaki ile tamamen aynı
 
     static Function<Integer, Integer> multiplyBy10Function = number -> number*10;
 
