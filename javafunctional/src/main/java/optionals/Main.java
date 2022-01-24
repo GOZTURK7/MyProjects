@@ -10,6 +10,9 @@ public class Main {
 
 //        Supplier<Object> objectSupplier = () -> "default value"; { ()->"default value" ifadesinin variabllı hali bu.}
         Optional.ofNullable(null).orElseGet(()-> "default value");
+//        filter() ---> If a value is present, and the value matches the given predicate,
+//        returns an Optional describing the value, otherwise returns an EMPTY OPTIONAL (not false):
+
 
         Supplier<String> suplier = ()->"Gökhan";
 
@@ -17,7 +20,8 @@ public class Main {
         Supplier<Random> randomSupplier = () -> new Random();
         Supplier<Random> s1 = randomSupplier;
 
-
+        var per = 5;
+        System.out.println(per);
 
         Supplier<Random> s3 = Random::new;
 
