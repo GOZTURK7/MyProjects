@@ -1,0 +1,30 @@
+//ödev
+//coord değeri -95.754168'den küçük olan restoranları bulmak için bir MongoDB sorgusu yazın
+use("ÜLKELER");
+db.foods.find({"address.coord":{$lt:-95.754168}},{"address.coord.$":1,name:1, _id:0, cuisine:1,restaurant_id:1});
+
+//ödev
+    //-65.754168 'den küçük boylamda yer alan ve 70'den fazla score alan 'Amerikan' mutfağı (cuisine) hazırlamayan restoranları bulmak için bir MongoDB sorgusu yazın.
+   use("ÜLKELER");
+    db.foods.find({$and:[{"address.coord":{$lt:-65.754168}, "grades.score":{$gt:70}, cuisine:"American "}]},{"restaurant_id":1, name:1, "cuisine":1, _id:0, "address.coord":1});
+    
+     //ödev
+//Herhangi bir 'Amerikan' mutfağı hazırlamayan ve Brooklyn borough a ait olmayan, 'A' score alan restoranları bulmak için bir MongoDB sorgusu yazın. Belge, mutfağa göre azalan sırada görüntülenmelidir. 
+use("ÜLKELER");
+db.foods.find({$and:[{$ne:{borough:"Brooklyn"},{$ne:{cuisine:"American "}},{"grades.score":"A"}}]},{name:1, borough:1, cuisine:1, _id:0,"grades.grade":1});
+
+
+//ödev
+//Adının son üç harfi 'ces' olan restoranlar için restoran kimliği, adı, ilçesi ve mutfağını bulmak için bir MongoDB sorgusu yazın
+
+//ödev
+//Bronx borough a ait , Amerikan veya Çin yemeği hazırlayan restoranları bulmak için bir MongoDB sorgusu yazınız
+
+//ödev
+//Puanı 10'dan fazla olmayan restoranların restoran id si, adı, ilçesi ve mutfağını bulmak için bir MongoDB sorgusu yazın.
+
+ //ödev
+//Koordinat (coord[]) dizisinin 2. elemanı 42'den fazla ve 52'ye kadar bir değer içeren restoranların restoran id, adı, adresi ve coğrafi konumunu (coords) bulmak için bir MongoDB sorgusu yazın.
+
+//ödev
+//Mutfağın adını artan sırada düzenlemek için bir MongoDB sorgusu yazın ve aynı mutfak için ilçe azalan sırada olmalıdır.
