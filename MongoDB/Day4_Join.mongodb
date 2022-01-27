@@ -1,0 +1,36 @@
+
+/////==================================================================================
+////                          UNIONWITH (FULL JOIN)
+////==================================================================================
+//  - SQL'deki UNION ALL komutuna benzer.
+//  - 2 collection'nin birlesimini gerceklestirmek icin kullanılir. 
+//  - Ornegin, $unionWith 2 farklı collection'daki pipeline sonuclarini tek bir 
+//    sonuc setinde birlesitirir. 
+//  - Bu sonuc seti pipeline'da bir sonraki asamaya iletilebilir.
+//  - SYNTAX:
+//  - { $unionWith: { coll: "<collection>", pipeline: [ <stage1>, ... ] } }
+////==================================================================================
+
+use("MEDYA");
+
+db.romanlar.insertMany(
+[{"yazar" : "Mehmet Bak", "fiyat" : 60, "yayinEvi" : "Yildiz", "adet": 1000 },
+{"yazar" : "Ali Gel", "fiyat" : 75, "yayinEvi" : "MaviAy", "adet": 1200 },
+{"yazar" : "Su Ak", "fiyat" : 90, "yayinEvi" : "Caliskan", "adet": 2200},
+{"yazar" : "Meryem Can", "fiyat" : 35, "yayinEvi" : "MorEv","adet": 560},
+{"yazar" : "Pelin Su", "fiyat" : 80, "yayinEvi" : "Hedef", "adet": 890 },
+{"yazar" : "Suat Ok", "fiyat" : 54, "yayinEvi" : "Sinir","adet": 245}]);
+
+use("MEDYA")
+db.denemeler.insertMany(
+[{"yazar" : "Mehmet Bak", "fiyat" : 34, "yayinEvi" : "Yildiz", "adet": 400 },
+{"yazar" : "Deniz Kos", "fiyat" : 44, "yayinEvi" : "Yildiz", "adet": 350 },
+{"yazar" : "Su Ak", "fiyat" : 50, "yayinEvi" : "MorEv", "adet": 200},
+{"yazar" : "İsmet Kaç", "fiyat" : 25, "yayinEvi" : "Hedef","adet": 800},
+{"yazar" : "Ali Gel", "fiyat" : 40, "yayinEvi" : "Hedef", "adet": 1200 },
+{"yazar" : "Meryem Can", "fiyat" : 22, "yayinEvi" : "MaviAy","adet": 300}]);
+
+////---------------------------------------------------------------------------------
+//// 1)  Her 2 collection'dan tum dokumanlari "adet" sutununa (field) gore ters siralayarak 
+////     listeleyiniz(FULL JOIN). id gözükmesin
+// ////---------------------------------------------------------------------------------
