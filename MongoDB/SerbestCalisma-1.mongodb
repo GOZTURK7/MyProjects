@@ -1,0 +1,153 @@
+
+
+use("URUNLER")
+db.fiyatlar.find({$and:[{fiyat:5000}, {urunAdi:"TV"}]});
+
+
+use("URUNLER")
+db.fiyatlar.find({fiyat:5000},{urunAdi:"TV"});
+
+use("URUNLER")
+db.fiyatlar.find({$or:[{urunAdi:"Utu"},{vergi:10}]})
+
+use("URUNLER")
+db.fiyatlar.find({fiyat:5000},{urunAdi:1, _id:0})
+
+
+use("URUNLER")
+db.fiyatlar.find({fiyat:{$ne:5000}},{_id:0, urunAdi:1, fiyat:1})
+
+use("URUNLER")
+db.fiyatlar.find({$nor:[{urunAdi:"TV"}, {vergi:10}]},{urunAdi:1, _id:0, vergi:1})
+
+use("URUNLER")
+db.fiyatlar.find({urunAdi:"TV"},{fiyat:1, _id:0, vergi:1})
+
+use("URUNLER")
+db.fiyatlar.find({}, {fiyat:1, urunAdi:1, _id:0})
+
+use("URUNLER")
+db.fiyatlar.find({fiyat:{$gte:3500}},{urunAdi:1, fiyat:1, _id:0})
+
+use("URUNLER")
+db.fiyatlar.find({fiyat:{$lte:4000}},{urunAdi:1, fiyat:1, _id:0})
+
+use("URUNLER")
+db.fiyatlar.find({fiyat:{$in:[1500, 3500, 7000]}})
+
+
+use("URUNLER")
+db.fiyatlar.find({$and:[{fiyat:{$lt:5000}}, {urunAdi:{$ne:"Utu"}}]},{urunAdi:1, fiyat:1})
+
+use("URUNLER")
+db.fiyatlar.find({fiyat:{$lt:5000}, urunAdi:{$ne:"Utu"}},{urunAdi:1, fiyat:1})
+
+use("URUNLER")
+db.fiyatlar.find({$or:[{fiyat:{$lt:5000}}, {urunAdi:"Koltuk"}]},{urunAdi:1, fiyat:1})
+
+
+use("URUNLER")
+db.fiyatlar.find({},{urunAdi:1,fiyat:1, _id:0}).sort
+({fiyat:1})
+
+use("URUNLER")
+db.fiyatlar.find({}, {urunAdi:1,fiyat:1, _id:0}).sort({fiyat:-1})
+
+use("URUNLER")
+db.fiyatlar.find({fiyat:5000},{urunAdi:1}).sort({urunAdi:1})
+
+
+use("URUNLER")
+
+db.articles.insertMany(
+   [
+     { _id: 1, subject: "coffee", author: "xyz", views: 50 },
+     { _id: 2, subject: "Coffee Shopping", author: "efg", views: 5 },
+     { _id: 3, subject: "Baking a cake", author: "abc", views: 90  },
+     { _id: 4, subject: "baking", author: "xyz", views: 100 },
+     { _id: 5, subject: "Café Con Leche", author: "abc", views: 200 },
+     { _id: 6, subject: "Сырники", author: "jkl", views: 80 },
+     { _id: 7, subject: "coffee and cream", author: "efg", views: 10 },
+     { _id: 8, subject: "Cafe con Leche", author: "xyz", views: 10 }
+   ]
+)
+use("URUNLER")
+db.articles.find()
+
+use("URUNLER")
+db.articles.createIndex({subject:"text", author:"text"})
+
+use("URUNLER")
+db.articles.find({$text:{$search:"coffee"}})
+
+use("URUNLER")
+db.articles.find({$text:{$search:"xyz"}})
+
+
+use("URUNLER")
+db.articles.createIndex({author:"text"})
+
+use("ÜLKELER")
+db.foods.find({"grades.score":{$gt:90}},{name:1, "grades.score":1, _id:0})
+
+
+use("ÜLKELER")
+db.foods.find({"grades.score":{$lt:150,$gt:80}})
+
+
+use("ÜLKELER")
+db.foods.find({$and:[{cuisine:{$ne:"American "}},{"grades.score":{$gt:70}},{"address.coord":{$lt:-65.754168}}]},{cuisine:1, _id:0, name:1, "address.coord":1, "grades.score":1})
+
+use("ÜLKELER")
+db.foods.find({cuisine:{$ne:"American "}, "grades.score":{$gt:70}, "address.coord":{$lt:-65.754168} },{cuisine:1, _id:0, name:1, "address.coord":1, "grades.score":1})
+
+
+use("ÜLKELER")
+db.foods.find({name:/^Wil/},{name:1, borough:1, _id:0, cuisine:1})
+
+
+use("ÜLKELER");
+db.foods.find({name:/Reg/},{name:1, borough:1, cuisine:1, _id:0,})
+
+use("ÜLKELER")
+db.foods.find({borough:{$in:["Staten island", "Queens", "Bronx", "Brooklyn"]}},{borough:1, name:1, cuisine:1, _id:0})
+
+
+use("ÜLKELER")
+db.foods.find({$or:[{$and:[{cuisine:{$ne:"American "}}, {cuisine:{$ne:"Chinese"}}]},{name:/^Wil/}]},{name:1, cuisine:1, borough:1, _id:0})
+
+use("ÜLKELER")
+db.foods.find({"grades.date":ISODate("2014-08-11T00:00:00Z"),"grades.grade":"A", "grades.score":11},{name:1, "grades.score.$":1, "grades.grade":1, "grades.date":1})
+
+
+// 9) grades dizisinin 2. öğesinin, (grade) bir "A" notu içerdiği ve bir ISODate "2014-08-11T00:00:00Z" tarihinde 9 score aldığı restoranlar için restoran id sini, adını ve grades bulmak için bir MongoDB sorgusu yazın
+use("ÜLKELER");
+db.foods.find({"grades.1.grade":"A", "grades.date":ISODate("2014-08-11T00:00:00Z"), "grades.score":9},{restaurant_id:1, name:1, "grades.score.$":1,"grades.grade":1, _id:0, "grades.date":1} )
+
+//Koordinat (coord[]) dizisinin 2. elemanı 42'den fazla ve 52'ye kadar bir değer içeren restoranların restoran id, adı, adresi ve coğrafi konumunu (coords) bulmak için bir MongoDB sorgusu yazın.
+use("ÜLKELER");
+db.foods.find({"address.coord.1":{$gt:41}},{name:1, "address.coord":1})
+
+
+// NOTE: ÖNEMLİ !!! : sadece üç şartın da sağlandığı objeyi getirmek için "grades.$":1 şeklinde .$ syntax'ini uygulamamız lazım projection içinde.
+use("ÜLKELER")
+db.foods.find({},{"address.coord":1, name:1})
+
+
+
+//10) Tüm adreslerin caddeyi içerip içermediğini öğrenmek için bir MongoDB sorgusu yazın, cadde yazmayı unuttuğum varmı diye kontrol için. 
+//NOTE: $exists : true =var olanları, $exists : false=yok olanları gösterir
+use("ÜLKELER")
+db.foods.find({"address.street":{$exist:false}});
+
+
+
+//11) score u 7'ye böldükten sonra kalan olarak 0 döndüren restoranlar için restoran id si, adı ve grades seçecek bir MongoDB sorgusu yazın
+//{"grades.score":{$mod:[7,0]}} (yediye bölümünden kalan 0 olsun demek);
+
+use("ÜLKELER")
+db.foods.find({"grades.score":{$mod:[7,0]}},{name:1, _id:0, restaurant_id:1, "grades.score.$":1})
+
+
+
+
