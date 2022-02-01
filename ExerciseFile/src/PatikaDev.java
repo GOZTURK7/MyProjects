@@ -11,6 +11,9 @@ public class PatikaDev {
 		Object[] b = { 6, 7, 8, 9, 0 };
 
 		List<Object[]> liste = new ArrayList<>();
+		
+		
+		liste.add(b);
 
 		liste.add(a);
 		liste.add(b);
