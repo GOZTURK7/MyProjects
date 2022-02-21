@@ -47,7 +47,7 @@ public class _Predicate {
     // PREDICATE :
                     //Predicate<parameter data type>           parameter
     static Predicate<String> isPhoneNumberValidPredicate = phoneNumber->
-            phoneNumber.startsWith("07") && phoneNumber.length()==11; // returns boolean result çünkü Predicate interface bunu yapıyor.
+            phoneNumber.startsWith("07") && phoneNumber.length()==11; // returns boolean result, çünkü Predicate interface bunu yapıyor.
 
     static Predicate<String> containsNumber3 = phoneNumber->phoneNumber.contains("3");
 
