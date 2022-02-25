@@ -30,7 +30,7 @@ public class Atm_Projesi {
 			Scanner scan = new Scanner(System.in);
 
 			System.out.println("Lütfen Kart Numaranızı Giriniz: ");
-			kartNumarası = scan.nextLine().replaceAll("\s", "");
+			kartNumarası = scan.nextLine().replaceAll("/s", "");
 
 			System.out.println("Lütfen Şifrenizi Giriniz: ");
 			sifre = scan.next();

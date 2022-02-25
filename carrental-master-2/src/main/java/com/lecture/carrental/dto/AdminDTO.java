@@ -27,7 +27,6 @@ public class AdminDTO {
     private String lastName;
 
     @Size(min = 4, max = 60)
-    @NotNull(message = "Please enter your password")
     private String password;
 
     @Pattern(regexp = "^((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$",
