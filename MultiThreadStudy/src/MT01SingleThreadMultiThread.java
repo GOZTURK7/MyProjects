@@ -11,7 +11,7 @@ public class MT01SingleThreadMultiThread {
     Javada 2 yöntem ile Thread oluşturmak mümkündür.
   ----------------------------------------------
           1- Thread classından bir class extends (türeterek) edilerek
-  2- Runnable Interface'inden implements edilerek.
+          2- Runnable Interface'inden implements edilerek.
 
     Thread class'ının yaygın kullanılan metotlari:
             -----------------------------------------------

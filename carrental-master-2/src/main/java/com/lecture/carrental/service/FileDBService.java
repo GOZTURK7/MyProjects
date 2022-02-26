@@ -22,7 +22,7 @@ public class FileDBService {
         fileDBRepository.save(fileDB);
         return fileDB;
     }
-    public FileDB getFileById(String id) throws ResourceNotFoundException {
+    public  FileDB getFileById(String id) throws ResourceNotFoundException {
         return fileDBRepository.findById(id).get();
     }
 

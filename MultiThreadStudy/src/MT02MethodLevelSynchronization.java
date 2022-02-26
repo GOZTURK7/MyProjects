@@ -18,10 +18,12 @@ public class MT02MethodLevelSynchronization {
 
    public static void main(String[] args) {
 
+      Sayici sayici = new Sayici();
+
       Thread thHabil = new Thread(new Runnable() {
          @Override
          public void run() {
-            Sayici.say("habil"); //eş zamanlı olamaz
+            sayici.say("habil"); //eş zamanlı olamaz
             // falan class'da filan method çalış // eş zamanlı olabilir.
 
          }
@@ -30,7 +32,7 @@ public class MT02MethodLevelSynchronization {
       Thread thKabil = new Thread(new Runnable() {
          @Override
          public void run() {
-            Sayici.say("kabil"); // eş zamanlı olamaz
+            sayici.say("kabil"); // eş zamanlı olamaz
             // falan class'da filan method çalış // eş zamanlı olabilir.
          }
       });
@@ -46,7 +48,7 @@ public class MT02MethodLevelSynchronization {
 
 class Sayici {
 
-   public synchronized static void say(String thread){ // synchronized  keyword --> bu methodun thread'ler tarafından eş zamanlı run edilmesini kısıtlar.
+   public synchronized void say(String thread){ // synchronized  keyword --> bu methodun thread'ler tarafından eş zamanlı run edilmesini kısıtlar.
       for (int i = 0; i < 20; i++) {
          MT02MethodLevelSynchronization.sayac++;
          System.out.println("sayac-"+ thread+  ":"+MT02MethodLevelSynchronization.sayac);

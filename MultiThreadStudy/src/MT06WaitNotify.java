@@ -9,10 +9,10 @@
    Bu methodlar, thread'ler arasi iletişim (inter-Thread communication) metodu olarak kullanılır.
    Aynı  class'ta birden çok method'lar wait() ve notify() yapılabilir
  */
-public class MT06WoitNotify {
+public class MT06WaitNotify {
     public static double bakiye = 0.0;
     public static void main(String[] args) {
-        MT06WoitNotify islem = new MT06WoitNotify();
+        MT06WaitNotify islem = new MT06WaitNotify();
         Thread paraCekTh = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -38,15 +38,21 @@ public class MT06WoitNotify {
             if (bakiye < 0 || bakiye < cekilecekMiktar) {
                 System.out.println("agam niddinolmayan parayı mı cekicen :) ");
             }
+
+
             try {
                 wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+
             bakiye -= cekilecekMiktar;
             System.out.println("paranız cekildi yeni bakıyeniz: " + bakiye);
         }
     }
+
+
     public void paraYatir(double yatirilacakMiktar) {
         bakiye += yatirilacakMiktar;
         System.out.println("agam para cepte gözün aydın :)" + bakiye);

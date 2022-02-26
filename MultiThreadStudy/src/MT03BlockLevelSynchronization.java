@@ -10,6 +10,20 @@ public class MT03BlockLevelSynchronization {
      */
 
     public static void main(String[] args) throws InterruptedException {
+//
+//        String name = "Gökhan";
+//
+//        Parantez p = new Parantez(){
+//            @Override
+//            public void parantezKoy(){
+//                System.out.println("Merhaba Gökhan Ben Anonym classtan yazdırıldım. "+ name);
+//            }
+//        }; //KONU DIŞI DENEME ANONİM CLASS.
+//
+//        p.parantezKoy();
+
+
+
 
         Parantez p1 = new Parantez(); // method call için obj create edildi.
         Thread thHabil = new Thread(new Runnable() {
