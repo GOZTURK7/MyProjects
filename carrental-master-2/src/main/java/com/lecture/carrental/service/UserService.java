@@ -53,7 +53,7 @@ public class UserService {
     public void login(String email, String password) throws AuthException {
         try {
             Optional<User> user = userRepository.findByEmail(email);
-            if (!BCrypt.checkpw(password, user.get().getPassword()))
+            if (!BCrypt.checkpw(password, user.get().getPassword())) // checkpw methodu daha önce girilen ve hash'lenen bir password ile şimdi girilenin eşleşip eşleşmediğini check ediyor.
                 throw new AuthException("invalid credentials");
         }catch (Exception e){
             throw new AuthException("invalid credentials");

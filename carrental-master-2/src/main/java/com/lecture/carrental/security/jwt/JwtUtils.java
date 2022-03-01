@@ -18,7 +18,7 @@ public class JwtUtils {
     @Value("${backendapi.app.jwtSecret}")
     private String jwtSecret;
 
-    @Value("${backendapi.app.jwtExpirationMs}")
+    @Value("${backendapi.app.jwtExpira")
     private long jwtExpirationMs;
 
     public String generateJwtToken(Authentication authentication) {
