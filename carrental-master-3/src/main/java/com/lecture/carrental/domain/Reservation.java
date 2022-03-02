@@ -1,6 +1,5 @@
 package com.lecture.carrental.domain;
 
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.lecture.carrental.domain.enumeration.ReservationStatus;
 import lombok.Getter;
@@ -13,16 +12,15 @@ import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-
-@Entity
-@Table(name="reservations")
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
+@Entity
+@Table(name = "reservations")
 public class Reservation {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToOne(cascade = CascadeType.PERSIST)
@@ -33,12 +31,10 @@ public class Reservation {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User userId;
 
-
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy HH:mm:ss", timezone = "Turkey")
     @NotNull(message = "Please enter the pick up time of the reservation")
     @Column(nullable = false)
     private LocalDateTime pickUpTime;
-
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy HH:mm:ss", timezone = "Turkey")
     @NotNull(message = "Please enter the drop off time of the reservation")
@@ -46,13 +42,13 @@ public class Reservation {
     private LocalDateTime dropOffTime;
 
     @Size(max = 150)
-    @Column(length=150, nullable = false)
     @NotNull(message = "Please enter the pick up location of the reservation")
+    @Column(length = 150, nullable = false)
     private String pickUpLocation;
 
     @Size(max = 150)
-    @Column(length=150, nullable = false)
-    @NotNull(message = "Please enter the drop-off location of the reservation")
+    @NotNull(message = "Please enter the drop off location of the reservation")
+    @Column(length = 150, nullable = false)
     private String dropOffLocation;
 
     @Enumerated(EnumType.STRING)
@@ -63,11 +59,9 @@ public class Reservation {
     private Double totalPrice;
 
 
-    public Long getTotalHours(LocalDateTime pickUpTime, LocalDateTime dropOffTime){
+    public Long getTotalHours(LocalDateTime pickUpTime, LocalDateTime dropOffTime) {
+
         return ChronoUnit.HOURS.between(pickUpTime, dropOffTime);
     }
-
-
-
 
 }

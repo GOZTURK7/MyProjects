@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 @AllArgsConstructor
 @Service
 public class ReservationService {
@@ -23,14 +24,27 @@ public class ReservationService {
     private final CarRepository carRepository;
     private final static String USER_NOT_FOUND_MSG = "user with id %d not found";
     private final static String CAR_NOT_FOUND_MSG = "car with id %d not found";
+    private final static String RESERVATION_NOT_FOUND_MSG = "reservation with id %d not found";
     //    public ReservationService(ReservationRepository reservationRepository) {
 //        this.reservationRepository = reservationRepository;
 //    }
-    public List<ReservationDTO> findAllByUserId(Long userId) {
-        User user = userRepository.findById(userId).get();
-        return reservationRepository.findAllByUserId(user);
+
+    public List<ReservationDTO> fetchAllReservations() {
+
+        return reservationRepository.findAllBy();
     }
 
+    public ReservationDTO findByIdAndUserId(Long id, Long userId) throws ResourceNotFoundException{
+        User user = userRepository.findById(userId).orElseThrow(() ->
+                new ResourceNotFoundException(String.format(USER_NOT_FOUND_MSG, userId)));
+        return reservationRepository.findByIdAndUserId(id, user).orElseThrow(() ->
+                new ResourceNotFoundException(String.format(RESERVATION_NOT_FOUND_MSG, id)));
+    }
+    public List<ReservationDTO> findAllByUserId(Long userId) {
+        User user = userRepository.findById(userId).orElseThrow(()->
+                new ResourceNotFoundException(String.format(USER_NOT_FOUND_MSG, userId)));
+        return reservationRepository.findAllByUserId(user);
+    }
     public void addReservation(Reservation reservation, Long userId, Car carId) throws BadRequestException {
         boolean checkStatus = carAvailability(carId.getId(), reservation.getPickUpTime(),
                 reservation.getDropOffTime());
@@ -59,4 +73,10 @@ public class ReservationService {
         Long hours = (new Reservation()).getTotalHours(pickUpTime, dropOffTime);
         return car.getPricePerHour() * hours;
     }
+
+    public ReservationDTO findById(Long id){
+        return reservationRepository.findByIdOrderById(id).orElseThrow(()->
+                new ResourceNotFoundException(String.format(RESERVATION_NOT_FOUND_MSG, id)));
+    }
+
 }

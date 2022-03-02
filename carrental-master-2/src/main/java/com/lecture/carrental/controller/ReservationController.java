@@ -3,6 +3,7 @@ package com.lecture.carrental.controller;
 
 import com.lecture.carrental.domain.Car;
 import com.lecture.carrental.domain.Reservation;
+import com.lecture.carrental.dto.ReservationDTO;
 import com.lecture.carrental.service.ReservationService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import javax.validation.Valid;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -22,6 +24,19 @@ import java.util.Map;
 public class ReservationController {
 
     public ReservationService reservationService;
+
+    @GetMapping("/auth/All")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('CUSTOMER')")
+    public ResponseEntity<List<ReservationDTO>> getUserReversationsByUserId(HttpServletRequest request){
+
+        Long userId = (Long) request.getAttribute("id");
+
+        List<ReservationDTO> reservations = reservationService.findAllByUserId(userId);
+
+        return new ResponseEntity<>(reservations, HttpStatus.OK);
+
+
+    }
 
     @PostMapping("/add")
     @PreAuthorize("hasRole('CUSTOMER') OR hasRole('ADMIN')")
