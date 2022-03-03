@@ -79,4 +79,38 @@ public class ReservationService {
                 new ResourceNotFoundException(String.format(RESERVATION_NOT_FOUND_MSG, id)));
     }
 
+    public void updateReservation(Car carId, Long reservationId, Reservation reservation) throws BadRequestException{
+        boolean checkStatus = carAvailability(carId.getId(), reservation.getPickUpTime(), reservation.getDropOffTime());
+
+        Reservation reservationExist = reservationRepository.findById(reservationId).orElseThrow(() ->
+                new ResourceNotFoundException(String.format(RESERVATION_NOT_FOUND_MSG, reservationId)));
+
+        if(reservation.getPickUpTime().compareTo(reservationExist.getPickUpTime()) == 0 &&
+                reservation.getDropOffTime().compareTo(reservationExist.getDropOffTime()) == 0 &&
+                carId.getId() == reservationExist.getCarId().getId()){
+            reservationExist.setStatus(reservation.getStatus());
+        }
+
+        else if(checkStatus)
+            throw new BadRequestException("Car is already reserved! Please choose another!");
+
+        Double totalPrice = totalPrice(reservation.getPickUpTime(), reservation.getDropOffTime(), carId.getId());
+
+        reservationExist.setTotalPrice(totalPrice);
+        reservationExist.setCarId(carId);
+        reservationExist.setPickUpTime(reservation.getPickUpTime());
+        reservationExist.setDropOffTime(reservation.getDropOffTime());
+
+        reservationRepository.save(reservationExist);
+
+    }
+
+    public void removeById(Long id) {
+        boolean reservationExists = reservationRepository.existsById(id);
+
+        if(!reservationExists){
+            throw new ResourceNotFoundException("reservation does not exist");
+        }
+        reservationRepository.deleteById(id);
+    }
 }
