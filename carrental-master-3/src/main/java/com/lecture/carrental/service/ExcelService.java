@@ -15,7 +15,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @Service
-public class ExelService {
+public class ExcelService {
 
     UserRepository userRepository;
     CarRepository carRepository;
