@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elemanları</title>
+</head>
+<body>
+
+    <form action="">
+        <input type="text" name="ad" id="ad"><br>
+        <input type="number" name="yas" id="yas"><br>
+        <input type="email" name="eposta" id="eposta"><br>
+        <input type="password" name="sifre" id="sifre"><br>
+        <input type="search" name="q" id="q"><br>
+        <input type="url" name="site" id="site"><br>
+        <input type="tel" name="telefon" id="telefon"><br>
+        <input type="hidden" name="id">
+
+        <input type="checkbox" name="futbol" id="futbol"><label for="futbol">Futbol</label>
+        <input type="checkbox" name="müzik" id="müzik"><label for="müzik">Futbol</label>
+        <input type="checkbox" name="kayak" id="kayak"><label for="kayak">Futbol</label><br>
+
+        <input type="radio" name="cinsiyet" id="cinsiyetE"><label for="cinsiyetE">Erkek</label>
+        <input type="radio" name="cinsiyet" id="cinsiyetK"><label for="cinsiyetK">Kadın</label>
+        <!-- Burada name=cinsiyet şeklinde aynı ismi vermemizin sebebi radio butonu bir grup olsun Erkek ve Kadın radio butonları aynı anda seçilemesin biri seçilince diğeri sönsün bunu önemli -->
+
+
+
+
+        <label for="profil">Profil Foto Seç</label><input type="file" name="profil" id="profil"><br>
+
+
+        <input type="color" name="profil rengi" id="profil rengi"><br>
+
+
+        <input type="range" name="" id=""><br>
+
+        <input type="date" name="doğum" id="">
+        <br>
+        <input type="time" name="başlangıç" id="">
+        <br>
+        <input type="datetime" name="is" id="isebaslama">
+        <br>
+        <input type="datetime-local" name="" id="">
+        <input type="month" name="" id="">
+        <br>
+        <br>
+        <input type="week" name="" id="">
+
+        <br>
+        <br>
+
+
+        <select name="sehir" id="sehir" multiple size="3">
+            <option value="01">Adana</option>
+            <option value="02">Adıyaman</option>
+            <option value="03">Afyon</option>
+            <option value="04">Antalya</option>
+        </select>
+        <br>
+        <br>
+
+
+        <input type="date" name="dogum" id="dogum"><br>
+        <input type="time" name="baslangic" id="baslangic">
+        <input type="datetime" name="is" id="is">
+        <input type="datetime-local" name="is2" id="is2">
+        <input type="month" name="" id="">
+        <input type="week" name="" id="">
+        <br>
+
+        <select name="sehir" id="sehir" size="3" multiple>
+            <option>Seçiniz</option>
+            <option value="1">Adana</option>
+            <option value="2">Adıyaman</option>
+            <option value="3">Afyon</option>
+            <option value="4">Trabzon</option>
+        </select>
+        <br>
+
+        <textarea name="ozgecmis" id="ozgecmis" cols="30" rows="10"></textarea>
+        <input type="submit" value="GÖNDER">
+
+    </form>
+
+
+</body>
+</html>

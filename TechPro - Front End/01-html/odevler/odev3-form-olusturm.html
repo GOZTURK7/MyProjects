@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <table>
+            <tr>
+                <td><label for="adı">Adı</label></td>
+                <td><input type="text" name="adı" id="adı"></td>
+                <td rowspan="3"  valign="top"><label for="hobiler">Hobiler</label></td>
+                <td><input type="checkbox" name="bfutbol">Futbol</td>
+            </tr>
+            <tr>
+                <td><label for="soyadı">Soyadı</label></td>
+                <td><input type="text" name="soyadı" id="soyadı"></td>
+                <td><input type="checkbox" name="voleybol" id="voleybol">Voleybol</td>
+            </tr>
+            <tr>
+                <td>Cinsiyet</td>
+                <td>
+                    <input type="radio" id="cinsiyetE" name="cinsiyet">
+                    <label for="cinsiyet">Bay</label>
+                    <input type="radio" id="cinsiyetK" name="cinsiyet">
+                    <label for="cinsiyet">Bayan</label>
+                </td>
+                <td><input type="checkbox" name="basketbol">Basketbol</td>
+                
+            </tr>
+            <tr>
+                <td><label for="">İlçe</label></td>
+                <td>
+                    <select name="ilce" id="ilce">
+                        <option value="0"> </option>
+                        <option value="1">Küçükçekmece</option>
+                        <option value="2">Kadıköy</option>
+                        <option value="3">Ataşehir</option>
+                        <option value="4">Fatih</option>
+                        <option value="5">Gaziosmanpaşa</option>
+                        <option value="6">Bakırköy</option>
+                        <option value="7">Yeşilköy</option>
+                    </select>
+                </td>
+                <td><label for="">Profil <br> Fotoğrafı</label></td>
+                <td><input type="text" value="Dosya Seçiniz" id="" disabled size="12"><label for="dosya" value="Browse"></label>Browse<input type="file" id="dosya" style="visibility:hidden"></td>  
+            </tr>
+            <tr>
+                <td><label for="">Eposta</label></td>
+                <td align="top"><input type="email" name="eposta" id="eposta" ></td>
+                <td><label for="dogum">Doğum <br>Tarihi</label>
+                <td><input type="date" id="dogum"></td>
+            </tr>
+            <tr>
+                <td valign="top"><label for="site">Kişisel Site</label></td>
+                <td valign="top"><input type="url" name="kisilesite" id="site"></td>
+                <td valign="top"><label for="adres">Adres</label></td>
+                <td rowspan="2"><textarea name="adresim" id="adres" cols="18" rows="3"></textarea></td>
+            </tr>
+            <tr>
+                <td valign="top"><label for="">Telefon</label></td>
+                <td><input type="tel" name="telefon" id="telefon"></td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+               <td align="left"><input type="submit" value="Kayıt Ol"></td>
+            </tr>
+           
+
+        </table>
+    </form>
+    
+</body>
+</html>
