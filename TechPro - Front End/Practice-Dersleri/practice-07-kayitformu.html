@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>KAYIT FORMU</h1>
+    <form action="server/register.js" method="post">
+        <p>
+            <label for="ad">Ad</label>
+            <input type="text" id="ad" name="ad" placeholder="Adınızı griniz">
+        </p>
+        <p>
+            <label for="soyad">Soyad</label>
+            <input type="text" name="soyad" id="soyad" placeholder="Soyadınızı giriniz">
+        </p>
+        <p>
+            <label for="tel">Tel</label>
+            <input type="tel" name="telefon" id="telefon">
+        </p>
+        <p>
+            <label for="tarih">Randevu</label>
+            <input type="date" id="tarih" name="tarih">
+        </p>
+        <p>
+            <label for="saat">Saat</label>
+            <input type="time" name="saat" id="saat">
+        </p>
+        <p>
+            <label for="yer">Yer</label>
+            <select name="yer" id="yer">
+                <option value="1">Merkez1</option>
+                <option value="2">Merkez2</option>
+                <option value="3">Merkez3</option>
+                <option value="4">Merkez4</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" value="Gönder">
+            <input type="reset" value="Sıfırla">
+        </p>
+    </form>
+</body>
+</html>
