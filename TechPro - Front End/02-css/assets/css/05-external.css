@@ -1,0 +1,31 @@
+
+
+
+/* ***** HEADER******* */
+h1{
+    font-size: 3rem;
+    text-align: center;
+    color:blue;
+
+}
+
+*{
+    color:brown
+}
+
+/* Taglar yıldızı ezer o yüzden sıralama önemi yok h1'den önce de olabilir sonra da */
+
+
+p.aaa{
+    font-size: 1.3rem;
+    background-color: chartreuse;
+    color:darkred;
+}
+
+
+
+/* burası önemli html sayfasında buna class="aaa bbb" şeklinde iki tane isim tanımladığımız element için yukarıda aaa yı uyguluyor sonra bu .bbb'yi de uyguluyor çünkü bu class="aaa bbb" şeklinde sadece araya bir space bırakarak iki tane class ismi tanımlamış oluyoruz. */
+.bbb{
+    font-size: 1.8rem;
+}
+
