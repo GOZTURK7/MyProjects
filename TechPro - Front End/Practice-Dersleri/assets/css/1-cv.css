@@ -1,0 +1,19 @@
+body{
+    bacground-color: beige;
+}
+
+h1, h3{
+    text-align: center;
+    color:white;
+    background-color:purple
+}
+
+ul{
+    background-color: bisque;
+    width: 200px;
+}
+
+table{
+    background-color:beige;
+
+}
