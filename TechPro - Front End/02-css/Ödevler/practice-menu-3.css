@@ -1,0 +1,53 @@
+
+
+
+nav{
+    font-family: 'Bebas Neue', cursive;
+    
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+
+}
+
+nav ul li a:hover{
+    color: rgb(212, 100, 100);
+}
+
+nav ul li:first-child > a{
+    color:white;
+
+}
+
+nav ul li:first-child > a:hover{
+    color: rgb(212, 100, 100);
+
+}
+
+nav ul li:hover{
+    color: rgb(212, 100, 100);
+}
+
+
+nav ul li:first-child{
+    background-color:gray;
+    margin-left:-20px;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul{
+    background-color:rgb(212, 209, 209);
+    width: 10vw;
+    border-radius: 3px;
+    padding-left: 20px;
+
+
+
+}
+
+
+
+

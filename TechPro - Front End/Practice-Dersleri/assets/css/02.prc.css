@@ -1,0 +1,18 @@
+body{
+    font-family: 'Sansita Swashed', cursive;
+    background: url("../img/pexels-oleg-magni-2033997.jpg"); 
+}
+
+div{
+    text-align: center;
+    background: url("../img/hichki.jpg");
+    font-weight: bold;
+}
+
+.container {
+    margin-top:100px;
+}
+
+.icerik{
+    padding:50px 50px 50px 50px;
+}

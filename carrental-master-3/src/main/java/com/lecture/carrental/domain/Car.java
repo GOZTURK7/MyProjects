@@ -66,4 +66,7 @@ public class Car {
         joinColumns = @JoinColumn(name = "car_id"),
         inverseJoinColumns = @JoinColumn(name = "file_id"))
     private Set<FileDB> image;
+
+
+
 }

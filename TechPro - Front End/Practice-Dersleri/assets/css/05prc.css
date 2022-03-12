@@ -1,0 +1,35 @@
+body{
+    background-color: aqua;
+    text-align: center;
+}
+
+.icerik h2{
+    background-color:red;
+}
+
+.bilgi h3{
+    background-color:blue;
+}
+
+.konu h2{
+    background-color:blanchedalmond;
+
+}
+
+.deger h3{
+    background-color:burlywood;
+}
+
+.container{
+    background-color:pink;
+}
+
+.icerik{
+    background-color:yellow;
+    padding: 75px ;
+}
+
+.konu{
+    padding: 25px;
+    background-color:coral;
+}
