@@ -1,0 +1,38 @@
+/* GENEL */
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* MAİN SAYFAMIZ */
+
+section.main{
+    background:url("../02-css/assets/img/resim5.jpg") center/cover no-repeat;
+}
+
+div.main{
+    background-color: aliceblue;
+    padding:1rem;
+}
+
+div.main a{
+    padding:30px;
+
+}
+
+article.main{
+    text-align:center;
+    background-color:beige;
+}
+
+form.main{
+    background-color:darkgray;
+    width:min-content;
+}
+
+article.main ol{
+    background-color:gray;
+    width:min-content;
+}

@@ -1,0 +1,21 @@
+
+
+ li{
+    display: inline-block;
+    background-color: blue;
+}
+
+a{
+    display: none;
+    text-decoration: none;
+    color: black;
+    background-color:yellow;
+}
+
+ul{
+    display: inline;
+}
+
+ul li:hover a{
+    display: inline-block;
+}

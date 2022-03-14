@@ -1,0 +1,75 @@
+body{
+    background-color: burlywood;
+}
+
+h1{
+    text-align: center;
+}
+
+div.container{
+    padding:50px;
+}
+
+div.container div{
+    text-align: center;
+    border: 1px solid red;
+    text-transform:uppercase;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+
+}
+
+.kutu1:hover{
+    background:url("aslan.jpg")  center/cover no-repeat;
+}
+
+.kutu2:hover{
+    background:url("kedi.jpg")  center/cover no-repeat;
+}
+
+.kutu3:hover{
+    background:url("deve.jpg") center/cover no-repeat;
+}
+
+.kutu4:hover{
+    background:url("tavuk.jpg") center/cover no-repeat;
+}
+
+.kutu5:hover{
+    background:url("k廃ek.jpg") center/cover no-repeat;
+}
+
+
+.kutu6:hover{
+    background:url("aslan.jpg") center/cover no-repeat;
+}
+
+
+.kutu7:hover{
+    background:url("aslan.jpg")  center/cover no-repeat;
+}
+
+
+.kutu8:hover{
+    background:url("aslan.jpg")  center/cover no-repeat;
+}
+
+.kutu9:hover{
+    background:url("aslan.jpg")  center/cover no-repeat;
+}
+
+
+.kutu10:hover{
+    background:url("aslan.jpg") center/cover no-repeat;
+}
+
+
+.kutu11:hover{
+    background:url("aslan.jpg") center/cover no-repeat;
+}
+
+
+.kutu12:hover{
+    background:url("aslan.jpg")
+}

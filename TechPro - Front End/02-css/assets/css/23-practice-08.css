@@ -1,0 +1,63 @@
+
+:root{
+    --color-menu:rgb(238, 206, 146);
+    --color-hover:rgb(57, 31, 59);
+}
+
+body{
+    margin:0;
+}
+
+nav.menu{
+    background-color: var(--color-menu);
+    text-align: center;
+}
+
+nav.menu ul{
+    padding: 0;
+    list-style: none;
+}
+
+nav.menu ul:last-child{
+    margin-right:1rem
+}
+
+
+nav.menu li{
+    display:inline;
+    padding: 0;
+    margin-left: 1rem;
+    /* background-color: blue; */
+
+}
+
+nav.menu li::after{
+    content:"|"
+}
+
+nav.menu li:last-child::after{
+    content:"";
+}
+
+nav.menu i:last-child{
+    margin-left: 2rem;
+}
+
+nav.menu a{
+    display: inline-block;
+    width:5rem;
+    color:black;
+    padding:1rem;
+    text-decoration: none;
+    margin-right:1.3rem;
+    /* background-color: yellow; */
+
+}
+
+nav.menu a:hover{
+    color:white;
+    background-color:var(--color-hover);
+
+}
+
+
