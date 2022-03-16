@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css">
+
+
+    <style>
+
+        .container {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            background-color:yellow;
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+            border-bottom-left-radius: 100px;
+            border-bottom-right-radius: 100px;
+            
+        }
+
+        .container label{
+            display:inline-block;
+            padding:2rem 6rem 2rem 2rem;
+            font-size: 2rem;
+            background-color: rgb(207, 146, 156);
+            border:1px solid black;
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+            border-bottom-left-radius: 100px;
+            border-bottom-right-radius: 100px;
+
+        }
+
+        input{
+            display:none;
+        }
+
+        .container label::before{
+            font:var(--fa-font-solid);
+            content:"\f0c7";
+            margin-right: 1rem;
+            
+      
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div class="container">
+        <label for="kaydet">Kaydet</label>
+        <input type="button" id="kaydet">
+    </div>
+    
+</body>
+</html>

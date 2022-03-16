@@ -52,6 +52,7 @@ public class UserService {
             throw new ConflictException("Error: Email is already in use!");
         }
 
+
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
 
@@ -65,7 +66,7 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public void login(String email, String password) throws AuthException {
+    public void login(String email, String password) throws AuthException{
         try {
             Optional<User> user = userRepository.findByEmail(email);
 

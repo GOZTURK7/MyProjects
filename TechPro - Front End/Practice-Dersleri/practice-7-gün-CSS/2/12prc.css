@@ -1,0 +1,59 @@
+body{
+    background-color: bisque;
+
+}
+
+header{
+    background-color:lightsalmon;
+    padding:1rm;
+}
+
+header ul{
+    list-style: none;
+    display:flex;
+    justify-content:space-evenly;
+}
+
+header ul a{
+    text-decoration: none;
+    color:black;
+    text-transform:uppercase;
+}
+
+header ul li:first-child::before{
+    font:var(--fa-font-solid);
+    content: "\f015";
+}
+
+h1{
+    text-align: center;
+    color:crimson;
+}
+
+.container{
+    display:flex;
+}
+
+.container .icerik{
+    margin-right: 100px;
+}
+
+footer{
+    display: flex;
+    background-color:lightsalmon;
+    justify-content: space-evenly;
+}
+
+footer .iletisim{
+    margin-top: 20px;
+}
+
+footer p{
+    margin-top: 20px;
+}
+
+footer .iletisim a{
+    padding: 7px;
+    color:black;
+    text-decoration:none;
+}

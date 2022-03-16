@@ -1,0 +1,46 @@
+
+:root{
+    --color1:rgb(167, 161, 161);
+    --color2:rgb(66, 64, 64);
+}
+
+div.menu{
+    background-color:var(--color1);
+    width: 20vh;
+}
+
+div.menu ul{
+    text-align: center;
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+div.menu ul li a{
+    display:block;
+    text-decoration: none;
+    color:white;
+    padding:0.5rem 0;
+}
+
+div.menu ul li:first-child{
+    background-color:var(--color2);
+}
+
+
+
+div.menu ul{
+    display:none;
+}
+
+#barmenu:checked + div.menu ul{
+    display:block;
+}
+
+div.menu ul a:hover{
+    background-color: var(--color2);
+}
+
+#barmenu{
+    display:none;
+}

@@ -1,0 +1,127 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    gap:1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem;
+}
+
+header .logo img{
+    width:300px;
+}
+
+header .menu ul{
+    display:flex;
+    list-style: none;
+    padding: 0;
+    margin:0;
+    gap: 1rem;
+}
+
+header .menu a{
+    text-decoration: none;
+    background-color: #FBB040;
+    color:black;
+    padding:0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+
+/* benim yaptıklarım */
+
+.box img{
+    width:300px;
+}
+
+.about-us-img img{
+    width:300px;
+}
+
+aside img{
+    width:300px;
+}
+
+
+
+/* FOOTER BÖLÜMÜ AYARLARI */
+
+footer img{
+    width:300px;
+}
+
+footer{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem;
+}
+
+footer ul{
+    background-color:rgb(66, 156, 30);
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+footer ul li{
+    margin:0;
+    padding:0;
+    background-color:red;
+}
+
+footer ul li a{
+    display:block;
+    background-color:yellow;
+    text-decoration:none;
+    text-align: left;
+    color:black;
+    padding:0.5rem 0;
+}
+
+/* FOOTER İLETİŞİM İCONLARI EKLENDİ */
+footer .iletisim ul li:first-child a::before{
+    font:var(--fa-font-solid);
+    content: "\f0e0";
+    padding-left: 0.5rem;
+}
+
+footer .iletisim ul li:nth-child(2) a::before{
+    font:var(--fa-font-solid);
+    content: "\f095";
+    padding-left: 0.5rem;
+
+}
+
+footer .iletisim ul li:nth-child(3) a::before{
+    font:var(--fa-font-brands);
+    content: "\f232";
+    padding-left: 0.5rem;
+
+}
+
+footer input{
+    padding:0.5rem 2rem;
+    background-color: #FBB040;
+    border:none;
+    border-radius:3px;
+
+}
+
+footer .menu a{
+    text-align: center;
+}
+
+footer a:hover{
+    background-color: #FBB040;
+    color:white;
+}
+
+footer .iletisim ul{
+    display:none;
+}
+
+footer .iletisim > input:hover + ul{
+    display:block;
+}
