@@ -1,0 +1,203 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navbar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../lib/fontawesome/css/all.min.css">
+
+    <style>
+        body{
+            background-color: var(--lightyellow);
+        }
+
+        :root{
+            --yellow:#fecc14;
+            --lightyellow:#fbd518;
+            --brown:#33180c;
+            --lightbrown:#916c17;
+        }
+
+
+        /************************** TOPBAR BÖLÜMÜ ******************/
+        .topbar a{
+            display: inline-block;
+            list-style:none;
+            text-decoration: none;
+            font-family: 'Fredoka One', cursive;
+            color:var(--yellow);
+            padding:0.5rem;
+        }
+
+
+        .topbar{
+            display:flex;
+            justify-content:flex-end;
+            background-color:#33180c;
+            border-radius:5px;
+
+        }
+
+        .topbar div:first-child{
+            margin-right: auto;
+        }
+
+        .topbar div:nth-child(2)::after{
+            content:"|";
+            color:var(--yellow);
+        }
+
+    /************************** NAVBAR BÖLÜMÜ ******************/
+
+    .navbar{
+            display:flex;
+            justify-content:flex-end;
+            background-color: var(--lightbrown);
+            border-radius:5px;
+            position: sticky;
+            top:0px;
+
+
+        }
+
+        /****** logo ******/
+        .navbar .logo img{
+            width:130px;
+            border: 1px solid var(--lightbrown);
+            border-radius:5px;
+        }
+        /****** Menu ******/
+
+        .navbar .menu ul{
+            display:inline-block;
+            list-style: none;
+            margin:0;
+            padding: 0;
+        }
+
+        .navbar .menu li{
+            display:inline-block;
+            margin:0;
+            padding: 0;
+
+        }
+
+        .navbar .menu a{
+            display: inline-block;
+            display: inline-block;
+            list-style:none;
+            text-decoration: none;
+            font-family: 'Fredoka One', cursive;
+            color:var(--yellow);
+            padding:0.5rem;
+        }
+
+        .navbar div:first-child{
+            margin-right: auto;
+        }
+
+       
+
+
+
+
+       
+
+        
+
+
+
+
+    </style>
+
+</head>
+<body>
+    
+    
+    <nav class="topbar">
+        <div class="welcome"><a href="#">Welcome</a></div>
+        <div><a href="#">Login</a></div>
+        <div><a href="#">Cart</a></div>
+    </nav>
+    <nav class="navbar">
+        <div class="logo"><img src="../../img/petshop-point.png"></div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+
+    </div>
+
+
+</body>
+</html>

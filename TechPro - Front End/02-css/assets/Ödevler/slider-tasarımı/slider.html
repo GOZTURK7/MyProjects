@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Tasarımı</title>
+
+
+    <style>
+
+
+        .resim{
+
+            border: 1px solid red;
+            background-image: url("../../img/pexels-vlad-chețan-1595655.jpg");
+            height:60vh;
+            
+            background-repeat:no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+
+        .slider div{
+            width:60px;
+            height: 10px;
+            background-color:black;
+        }
+
+       
+        .slider div:nth-child(3){
+            background-color:rgb(206, 176, 41);
+        }
+
+
+        .slider{
+            display: flex;
+            justify-content:space-between;
+            align-items:center;
+            width:17%;
+            margin-left:41%;
+            margin-top:10px
+            
+            
+        }
+
+       
+
+    </style>
+
+
+</head>
+<body>
+    
+    <div class="resim"></div>
+
+  
+    <div class="slider">
+        <div> </div>
+        <div></div>
+        <div></div>
+    </div>
+    
+
+</body>
+</html>
