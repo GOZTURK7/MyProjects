@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input group</title>
+</head>
+
+
+    <style>
+
+        .input-group{
+            position: relative;
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            
+        }
+
+        .input-group input[type=text]{
+            border:none;
+            outline: none;
+            margin-right: 39px;
+        }
+
+        .input-group input[type=button]{
+            position: absolute;
+            border:none;
+            border-radius: 20px;
+            padding: 0.5rem 0.7rem;
+            right: 1px;
+            bottom: 1px;
+            background-color: gray;
+            color:white;
+        }
+
+        .input-group:focus-within{
+            border:1px solid orange;
+        }
+
+        .input-group:focus-within input[type=button]{
+            background-color:orange;
+            color:black;
+
+        }
+
+    </style>
+
+
+
+
+
+<body>
+    
+    <div class="input-group">
+        <input type="text">
+        <input type="button" value="Send">
+    </div>
+
+</body>
+</html>
