@@ -1,0 +1,33 @@
+body{
+    background-color:bisque;
+}
+
+h1{
+    text-align: center;
+    color:crimson;
+    transition:color 1s;
+}
+
+h1:hover{
+    color:black;
+}
+
+.container{
+    display:flex;
+    background-color:aqua;
+    position:relative;
+}
+
+.resim{
+    background:url("https://media.istockphoto.com/photos/fresh-flowers-in-ice-cream-cone-still-life-picture-id473082752?k=20&m=473082752&s=612x612&w=0&h=VfNdxeSIU2TK9CPpRrjz3-liEq4FpYLc7zmJY45FlVU=") center/cover no-repeat;
+    width:20%;
+    height:50vh;
+    position:absolute;
+    bottom:0;
+    right:0;
+
+}
+
+.resim:hover{
+    transform:rotateY(180deg);
+}
