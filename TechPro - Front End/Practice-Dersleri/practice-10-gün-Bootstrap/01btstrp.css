@@ -1,0 +1,38 @@
+.sayfa{
+    height: 10vh;
+    background-image: url("../assets/img/products/5.jpg") cover/center no-repeat;
+    position: relative;
+}
+
+.icerik{
+    background-color:aliceblue;
+    position:absolute;
+    left:30%;
+    top:40%;
+    width:50vw;
+    
+}
+
+.icerik h1{
+    text-transform: center;
+    text-align: center;
+    background-color:burlywood;
+
+}
+
+.temel{
+    padding:3rem;
+    background-color:bisque;
+    text-align: center;
+}
+
+.btn-primary{
+    background-color:coral;
+}
+
+.btn-check:focus +.btn-primary, .btn-primary:focus{
+    color:#fff;
+    background-color:coral;
+    border-color:black;
+    box-shadow: 0 0 0 0;
+}
