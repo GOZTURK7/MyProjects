@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="sayi1" placeholder="başlangıc değiri girin">
+    <input type="text" id="sayi2" placeholder="bitiş değerini girin">
+    <button id="hesapla" onclick="hesapla()">Hesapla</button>
+    <h1 id="sonuc"></h1>
+
+
+
+
+
+    <script>
+
+        function hesapla(){
+
+            let sonuc = 0;
+
+            let sayi1 = document.querySelector("#sayi1").value;
+            let sayi2 = document.querySelector("#sayi2").value;
+
+            sayi1 = Number(sayi1);
+            sayi2 = Number(sayi2);
+
+
+            if(sayi2 < sayi1){
+                temp = sayi1;
+                sayi1 = sayi2;
+                sayi2 = temp;
+            }
+
+            for(let i=sayi1; i<=sayi2; i++ ){
+
+                if(i%7==0){
+                    sonuc ++;
+                }
+                // 2. yol if yerine bunu da yapabilirdik.
+                //i%7 == 0 && toplam++
+            }
+
+            document.querySelector("#sonuc").innerText = `${sonuc} tane 7'ye bölünen var.`;
+
+
+        }
+
+
+    </script>
+
+
+</body>
+</html>

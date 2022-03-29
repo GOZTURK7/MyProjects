@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .red{
+            background-color:red;
+        }
+
+        .blue{
+            background-color: blue;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1 id="baslik" onclick="sayHello()" class="blue">Javascript</h1>
+
+    
+    <input type="text" name="" id="txtsayi1">
+    <input type="text" name="" id="txtsayi2">
+    <button onclick="topla()" id="btnTopla">Topla</button>
+
+    <div id="sonuc"></div>
+
+    
+
+
+
+    <script>
+        
+        function sayHello(){
+            alert("Hello world!");
+        }
+
+        function topla(){
+            let sayi1 = document.querySelector("#txtsayi1").value;
+            let sayi2 = document.querySelector("#txtsayi2").value;
+            let sonuc = Number(sayi1) + Number(sayi2);
+            // 1. yol
+            // document.querySelector("#sonuc").innerText = `${sonuc}` 
+            // 2. yol
+            document.querySelector("#sonuc").innerHTML = `Sonuç: <b>${sonuc}</b>`
+            
+
+
+        }
+
+
+    </script>
+</body>
+</html>
