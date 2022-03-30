@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" name="" id="txtNum1">
+    <input type="text" name="" id="txtNum2">
+
+    <label for="calculateNums">Choose an operation</label>
+    <select name="calculate" id="calculateNums">
+        <option value="select">Select</option>
+        <option value="addition">Addition</option>
+        <option value="subtraction">Subtraction</option>
+        <option value="multiplication">Multiplication</option>
+        <option value="division">Division</option>
+
+    </select>
+    
+    <button onclick="calculate()">Hesapla</button>
+
+    <h1 id="result"></h1>
+
+
+    <script>
+
+        
+
+
+        function calculate(){
+
+        let num1 = Number(document.querySelector("#txtNum1").value);
+        let num2 = Number(document.querySelector("#txtNum2").value);
+        let result = 0;
+        console.log(num1, num2);
+
+        let select = document.querySelector('#calculateNums');
+        let option = select.options[select.selectedIndex].text;
+        console.log(option);
+        
+        switch (option){
+            case "Addition":
+            result = num1 + num2;
+            document.querySelector("#result").innerText = `Result is :${result}`;
+            console.log(result);
+            break;
+            case "Subtraction":
+            result = num1 - num2;
+            document.querySelector("#result").innerText = `Result is :${result}`;
+            console.log(result);
+            break;
+            case "Multiplication":
+            result = num1 * num2;
+            document.querySelector("#result").innerText = `Result is :${result}`;
+            console.log(result);
+            break;
+            case "Division":
+            result = num1 / num2;
+            document.querySelector("#result").innerText = `Result is :${result}`;
+            console.log(result);
+            break;
+            default:
+                alert("Geçerli Bir İşlem Seçiniz")
+            
+        }
+    }
+
+
+    </script>
+
+
+
+
+</body>
+</html>

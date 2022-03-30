@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+
+    
+
+
+    <input id = "indirimOrani" type="text" placeholder="indirim oranı giriniz">
+    <button id="uygula" onclick="uygula()">Uygula</button>
+
+    <ul>
+        <li>Monitör<span>1500</span>$</li>
+        <li>Monitör<span>500</span>$</li>
+        <li>Monitör<span>10</span>$</li>
+        <li>Monitör<span>5</span>$</li>
+    </ul>
+
+
+    <script>
+
+
+        function uygula(){
+
+            let indirimOrani = document.querySelector("#indirimOrani").value;
+            console.log(indirimOrani);
+            let list = document.querySelectorAll("span");
+
+            for(let i=0; i<4; i++){
+            let indirimliFiyat = Number(list[i].textContent) - Number(list[i].textContent)*indirimOrani/100;
+
+            list[i].innerText=indirimliFiyat;
+            
+            }
+
+
+        }
+
+        
+
+    </script>
+    
+
+    
+</body>
+</html>

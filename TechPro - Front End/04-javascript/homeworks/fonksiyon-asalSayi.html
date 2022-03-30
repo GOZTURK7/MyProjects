@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="number" name="sayi" id="num" placeholder="Bir sayı giriniz:">
+    <button id="isPrime" onclick="isPrime()">Is Prime</button>
+
+    <h1 id="result"></h1>
+
+
+    <script>
+
+        function isNumeric(value) {
+            return /^-?\d+$/.test(value);
+        }
+        
+        function isPrime() {
+
+            let isPrime = true;
+
+            let num =document.querySelector("#num").value;
+
+            console.log(isNaN(num));
+           if(num!=1 && isNumeric(num)==true){
+
+            for(let i = 2; i < num; i++) {
+
+                if(num%i==0){
+                    isPrime=false;
+                    break;
+                }
+            }
+        }else if(num==1){
+            isPrime=false;
+        }
+
+           isNumeric(num)==true ? (isPrime == true ? document.querySelector("#result").innerText = `${num} is a prime number` : document.querySelector("#result").innerText = `${num} is not a prime number`) : document.querySelector("#result").innerText = `${num} is not a number enter a valid character`;
+
+
+        }
+
+       
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

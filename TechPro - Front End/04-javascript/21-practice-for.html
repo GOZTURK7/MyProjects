@@ -29,6 +29,12 @@
             sayi2 = Number(sayi2);
 
 
+            if(sayi1 == 0 || sayi2==0){
+                alert("geçerli bir sayı giriniz");
+                return; // buradan sonra devam etmiyor aşağıya geçmiyor hesapla fonksiyonu sonlanıyor.
+            }
+
+
             if(sayi2 < sayi1){
                 temp = sayi1;
                 sayi1 = sayi2;
