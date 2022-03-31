@@ -1,0 +1,191 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+
+<style>
+
+    .gameBoard{
+        display: flex;
+        justify-content:center;
+        gap: 1rem;
+        padding:3rem;
+
+        border: none;
+        width:500px;
+        margin:0 auto;
+        border-radius: 2rem;
+        margin-top: 15rem;
+        background-color:rgb(113, 223, 122);
+    }
+
+    .resultBoard{
+        display: flex;
+        justify-content:center;
+        gap: 1rem;
+        padding:3rem;
+
+        border: none;
+        width:500px;
+        margin:0 auto;
+        border-radius: 2rem;
+        background-color:rgb(113, 223, 122);
+        text-align: center;
+    }
+
+
+    .startGame{
+        font-size: 1.5rem;
+    }
+    
+
+
+  
+
+    input[name=content], button[name=content]{
+        width:10rem;
+        height:3rem;
+        border-radius:9px;
+        border:none;
+        outline:none;
+        color:white;
+
+        
+    }
+
+    ::placeholder{
+        color:rgb(240, 233, 233);
+    }
+
+    button{
+        background-color:black;
+        color:white;
+        border:none;
+    }
+
+    .endGame{
+
+    }
+
+    .cheat{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        background-color:black;
+        color:white;
+        width:100px;
+        height:100px;
+        border-radius: 50px;
+        text-align:center;
+
+
+    }
+
+
+</style>
+
+
+
+</head>
+<body>
+
+    <div class="cheat">
+        Cheat From Here
+    </div>
+    
+
+
+    <div class="gameBoard">
+
+    
+        <input class="number d-none bg-secondary" type="number" name="content" placeholder="Enter your estimate" id="num">
+        <button class="estimate d-none" name="content" onclick="estimate()">Estimate</button>
+        <button class="startGame" name="content" onclick="startGame()">Start Game</button>
+
+
+    </div>
+
+    <div class="resultBoard d-none" >
+        <h1 class="result"></h1>
+    </div>
+
+
+
+
+
+
+
+    <script>
+
+        let estimateRight = 10;
+        let isFinish= false;
+        let num = 0;
+        let estimatedNum = 0;
+
+        function startGame(){
+            if(isFinish==false){
+            document.querySelector('.number').classList.remove("d-none");
+            document.querySelector('.estimate').classList.remove("d-none");
+            document.querySelector('.startGame').innerHTML = `<i class="fa-solid fa-circle-stop"></i>`
+            num = Math.floor(Math.random()* (100))+1;
+            isFinish=true;
+            document.querySelector('.resultBoard').classList.add("d-none");
+            document.querySelector('.cheat').innerText = `${num}`;
+
+            }else{
+            document.querySelector('.number').classList.add("d-none");
+            document.querySelector('.estimate').classList.add("d-none");
+            document.querySelector('.startGame').innerText = "Start Game";
+            isFinish=false;
+            document.querySelector('.resultBoard').classList.add("d-none");
+            document.querySelector('.cheat').innerText = "cheat from here";
+
+            }
+        }
+
+
+        function estimate(){
+
+            if(estimateRight>0){
+
+                estimatedNum = document.querySelector(".number").value;
+
+                if(estimatedNum == num){
+                    document.querySelector('.result').innerText = `congratilations !!!`;
+                    document.querySelector('.resultBoard').classList.remove("d-none");
+                    estimateRight=10;
+                }else{
+                    document.querySelector('.result').innerText = `Try again !!! Remain Right:${estimateRight}`;
+                    document.querySelector('.resultBoard').classList.remove("d-none");
+                    estimateRight--;
+                    console.log(estimateRight);
+                }
+
+            }else{
+                document.querySelector('.result').innerText = `Your Right: ${estimateRight} You Have Losed Stop The Game`;
+                document.querySelector('.resultBoard').classList.remove("d-none");
+                estimateRight=10;
+
+            }
+        }
+
+            
+
+        
+    
+    
+
+    </script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
