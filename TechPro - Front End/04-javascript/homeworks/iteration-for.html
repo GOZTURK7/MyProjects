@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <input type="number" id="number" placeholder="pozitif ve negatif sayıları girin">
+    <button id="ekle">Ekle</button>
+    <button id="hesapla">Hesapla</button>
+
+    <h3 id="liste"></h3>
+    <h3 id="pozitifler"></h3>
+    <h3 id="negatifler"></h3>
+    <h1 id="sonuc"></h1>
+
+    
+
+
+    <script>
+
+        const listNegative = [];
+        const listPozititive =[]
+        const list = [];
+        let negatifToplam = 0;
+        let pozitifToplam = 0;
+
+
+       
+        document.querySelector("#ekle").addEventListener('click', ()=> {
+            let num = Number(document.querySelector("#number").value);
+
+            
+
+            list.push(num);
+            document.querySelector('#liste').innerHTML = `Liste: [${list}]`;
+            document.querySelector('#number').value="";
+            document.querySelector("#number").focus();
+
+           
+
+
+        });
+
+
+        document.querySelector("#hesapla").addEventListener('click', ()=> {
+            for(num of list){
+                if(num < 0){
+                    listNegative.push(num);
+                }else{
+                    listPozititive.push(num);
+                }
+            }
+
+            document.querySelector("#negatifler").innerHTML = `Negatifler: [${listNegative}]`;
+            document.querySelector("#pozitifler").innerHTML = `pozitifler: [${listPozititive}]`;
+
+            for(num of list){
+                console.log(typeof(num));
+                num < 0 ? negatifToplam += num : pozitifToplam+=num;
+                console.log(typeof(num));
+            }
+
+            document.querySelector("#sonuc").innerHTML = `Negatifler ve Pozitifler Farkı: ${pozitifToplam - negatifToplam}`;
+        })
+
+    </script>
+
+
+
+</body>
+</html>

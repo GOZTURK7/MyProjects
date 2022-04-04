@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <h1 id="baslik"></h1>
+
+
+
+
+
+    <script>
+        const meyveler = ["Elma", "Armut", "Muz", "Kivi"];
+
+        console.log(meyveler);
+
+        meyveler.pop(); // son elemanı sildi.
+        console.log(meyveler);
+
+        meyveler.push("Ananas"); // sona eleman ekler
+        console.log(meyveler);
+
+        meyveler.shift(); // ilk elemanı siler 
+        console.log(meyveler);
+
+        meyveler.unshift("Çilek"); // başa eleman ekler,
+        console.log(meyveler);
+
+        meyveler.reverse(); // tersten sıralayacak,
+        console.log(meyveler);
+
+        meyveler.sort(); // doğal sıralı sıralayacak,
+        console.log(meyveler);
+
+        meyveler.sort((a,b)=> a.localeCompare(b, 'tr')); // yerel alfabeye göre ç, ğ gibi harfleri de türk alfabesine göre sıralaması için bu şekilde yapıyoruz.
+        console.log(meyveler);
+
+
+
+        meyveler.splice(2,1) // ilk parametre başlangıc index'i , ikinci parametre bir elemanı sil (ikinci index'ten itibaren bir elemanı sil)
+        console.log(meyveler);
+        meyveler.splice(2,2, "Kereviz");
+        console.log(meyveler); // ['Ananas', 'Armut', 'Kereviz']
+        meyveler.splice(2,0,"Ayva", "Ayva", "Nar");
+        console.log(meyveler); // ['Ananas', 'Armut', 'Ayva', 'Ayva', 'Nar', 'Kereviz']
+
+
+        
+        document.querySelector("#baslik").innerHTML = meyveler.join("<br>");
+
+
+
+
+
+        const sayilar = [5, 14, 2, 167];
+        sayilar.sort((a,b)=> a-b);
+        console.log(sayilar);
+
+
+
+    </script>
+
+</body>
+</html>
