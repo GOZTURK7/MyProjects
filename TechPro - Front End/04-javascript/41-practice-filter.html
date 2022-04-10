@@ -5,44 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <input type="text" id="txtHarf">
-
-    <ul id="liste">
-
-    </ul>
-
-    
-    <script>
-        const bireyler = ["Mustafa", "Murat", "Ahmet", "mustafa", "Ayşe", "Canan"];
-
-        const filtrele = (harf) => {
-            let strBireyler = "";
-            let yeniDizi = bireyler;
-
-            if(harf){
-                yeniDizi = yeniDizi.filter( 
-                    birey => birey.toLocaleLowerCase().startsWith(harf.toLocaleLowerCase()) 
-                );
-            }
-
-            yeniDizi.forEach(birey=> {
-                strBireyler+=`<li>${birey}</li>`;
-            });
-
-            document.querySelector("#liste").innerHTML=strBireyler;
+    <style>
+        #tblCountries tbody tr{
+            cursor: pointer;
         }
 
-        filtrele();
+        #tblCountries tbody tr:hover{
+            background-color: rgb(219, 183, 253);
+        }
+    </style>
 
-        document.querySelector("#txtHarf").addEventListener('input', (e)=> {
-            console.log(e.target.value);
-            filtrele(e.target.value);
-        });
+</head>
+<body>
+    <div class="container">
+        <div id="countryDetail" class="card sticky-top">
+            
+        </div>
 
+        <table id="tblCountries" class="table">
+            <thead>
+                <tr>
+                    <th>Kod</th>
+                    <th>Ülke Adı</th>
+                    <th>Yüzölçümü</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th class="totalArea"></th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
     
-    </script>
+
+    <script type="module" src="assets/js/41-practice-filter.js"></script>
 </body>
 </html>
