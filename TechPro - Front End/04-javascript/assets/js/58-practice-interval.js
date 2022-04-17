@@ -21,14 +21,17 @@ let tick = () =>{
 
     console.log(`${date.getHours()}: ${date.getMinutes()} : ${date.getSeconds()}`);
 
-    if(second2.innerText.includes(":")){
-        second2.style.color = "rgb(58, 53, 53)";
-        second2.innerText = ".";
-    }else{
-        second2.style.color = "green"
-        second2.innerText = ":";
-    }
+    // if(second2.innerText.includes(":")){
+    //     second2.style.color = "rgb(58, 53, 53)";
+    //     second2.innerText = ".";
+    // }else{
+    //     second2.style.color = "green"
+    //     second2.innerText = ":";
+    // }
     // saati güncelleyecek fonksiyon
+
+    if(second2.style.opacity==0) second2.style.opacity=1;
+    else second2.style.opacity=0;
    
 
 }

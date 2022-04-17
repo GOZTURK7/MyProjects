@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //  REST OPERATÖRÜ
+        function topla(...sayilar){
+            return sayilar.reduce((x,y)=> x+y, 0);
+        }
+
+       console.log(topla(5, 8));
+
+
+
+    function ortalama(adi, soyadi, ...notlar){
+       
+        let ort = notlar.reduce((x,y)=> x+y, 0) / notlar.length;
+        return `${adi} ${soyadi} için ortalama: ${ort} `
+    }
+
+    console.log(ortalama("Ali", "Gel", 12, 45, 23, 78, 89));
+    console.log(ortalama("Ayşe", "Koş", 56, 76));
+
+
+    </script>
+</body>
+</html>
