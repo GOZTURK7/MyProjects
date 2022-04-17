@@ -2,7 +2,7 @@ const HelloWorld = ()=>{
 
     return (
 
-        <div>Hello World1</div>
+        <div>Hello World</div>
     );
 
 }
