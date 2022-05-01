@@ -8,6 +8,8 @@ import students from './assets/data/students.json'
 import Kisi from './comp3/Kisi';
 import "./assets/css/style.css";
 import Kurs from './comp3/Kurs';
+import Cards from './comp4/Cards';
+import Akis from './comp4/Akis';
 
 
 
@@ -19,11 +21,9 @@ function App() {
     <Cders/>
     <Tablo/>
     <Liste/>
+    <Kurs/>
 
- */}
-      <Kurs/>
-
-      <div className="card">
+    <div className="card">
           {students.map((student, index) =>{
 
             const{isim, img, yas, kurs}=student;
@@ -39,6 +39,29 @@ function App() {
             />
           )})}
       </div>
+
+ */}
+
+ <Akis/>
+
+<div className="yanyana">
+          {students.map((student, index) =>{
+
+            const{isim, img, yas, kurs}=student;
+
+            return (
+
+            <Cards 
+            key={index} 
+            ad = {isim} 
+            img={img} 
+            yas={yas} 
+            kurs={kurs}
+            />
+          )})}
+      </div>
+
+      
   </div>;
 }
 
