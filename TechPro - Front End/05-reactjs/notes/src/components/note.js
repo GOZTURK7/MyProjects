@@ -1,15 +1,15 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 
-const Note = ({note}) => {
+const Note = ({note, onRemoveNote}) => {
     const {id, title, body} = note;
   return (
   
-    <Card >
+    <Card>
         <Card.Body>
             <Card.Title>{title}</Card.Title>
             <Card.Text>{body}</Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="danger" onClick={()=>{onRemoveNote(id)}}>Sil</Button>
         </Card.Body>
     </Card>
 

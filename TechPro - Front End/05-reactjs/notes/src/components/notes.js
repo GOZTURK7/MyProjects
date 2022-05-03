@@ -2,17 +2,20 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Note from "./note";
 
-const Notes = ({data}) => {
-    console.log(data);
+const Notes = ({data, removeNote}) => {
+
+    let keyId = 0;
+
   return (
   
         <Container>
             <Row className="g-5">
                 {
                     data.map(item =>( 
-                    <Col key={item.id} md={4}>
-                        <Note note={item}/>
-                    </Col>))
+                    <Col key={item.id+(keyId)} md={4}>
+                        <Note note={item} onRemoveNote={removeNote}/>
+                    </Col>
+                   ))
                 }
                
             </Row>

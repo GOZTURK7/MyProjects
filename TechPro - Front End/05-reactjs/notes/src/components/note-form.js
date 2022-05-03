@@ -1,15 +1,23 @@
 import { Button, Form } from "react-bootstrap";
-import React from "react";
 
-const NoteForm = () => {
+const NoteForm = ({addNote, getValue, getTitle}) => {
+    // const [value, setValue] = useState('');
+
+    // const getValue = (text) =>{
+    //     setValue(text.target.value);
+    // }
+    
+
   return (
 
     <>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Notunuzu Giriniz</Form.Label>
-            <Form.Control type="email" />
+            <Form.Label>Konu :</Form.Label>
+            <Form.Control onChange={(e)=>getTitle(e)} type="email"/>
+            <Form.Label>Notunuzu Giriniz :</Form.Label>
+            <Form.Control onChange={(e)=>getValue(e)} type="email"/>
         </Form.Group>
-        <Button variant="warning">Ekle</Button>
+        <Button variant="warning" onClick={()=>addNote()}>Ekle</Button>
 
     </>
 
