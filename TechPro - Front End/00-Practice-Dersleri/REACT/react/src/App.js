@@ -10,6 +10,8 @@ import "./assets/css/style.css";
 import Kurs from './comp3/Kurs';
 import Cards from './comp4/Cards';
 import Akis from './comp4/Akis';
+import Bilgiler from './comp5/Bilgiler';
+import Bitis from './comp6/Bitis';
 
 
 
@@ -40,9 +42,8 @@ function App() {
           )})}
       </div>
 
- */}
 
- <Akis/>
+       <Akis/>
 
 <div className="yanyana">
           {students.map((student, index) =>{
@@ -61,6 +62,12 @@ function App() {
           )})}
       </div>
 
+ <Bilgiler/>
+
+ */}
+
+
+  <Bitis/>
       
   </div>;
 }
