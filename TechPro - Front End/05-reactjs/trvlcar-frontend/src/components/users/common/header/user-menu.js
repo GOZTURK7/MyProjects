@@ -28,6 +28,16 @@ const UserMenu = () => {
     <>
       {isUserLogin ? (
         <NavDropdown title={`${user.firstName} ${user.lastName}`} align="end">
+
+          {user.roles.includes("Administrator") && 
+          <>
+          <NavDropdown.Item as={Link} to="/admin">
+            Admin Panel
+          </NavDropdown.Item>
+          <NavDropdown.Divider />
+          </>}
+          
+
           <NavDropdown.Item as={Link} to="/user/reservations">
             Reservations
           </NavDropdown.Item>

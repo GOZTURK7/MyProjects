@@ -6,6 +6,7 @@ import Spacer from "../../components/users/common/spacer/spacer";
 import VehicleBookingForm from "../../components/users/vehicles/vehicle-booking-form";
 import VehicleDetails from "../../components/users/vehicles/vehicle-details";
 import { useStore } from "../../store";
+
 const VehicleDetailsPage = () => {
   const { vehicleId } = useParams();
   const { vehicleState, userState } = useStore();
@@ -13,11 +14,13 @@ const VehicleDetailsPage = () => {
   const [selectedVehicle, setSelectedVehicle] = useState(null);
   const { isUserLogin } = userState;
   const navigate = useNavigate();
+
   useEffect(() => {
     const selectedVehicles = vehicles.filter((item) => item.id == vehicleId);
     if (selectedVehicles.length <= 0) navigate("/vehicle-not-found");
     setSelectedVehicle(selectedVehicles[0]);
   }, []);
+
   if (selectedVehicle)
     return (
       <>
@@ -43,4 +46,5 @@ const VehicleDetailsPage = () => {
       </>
     );
 };
+
 export default VehicleDetailsPage;
