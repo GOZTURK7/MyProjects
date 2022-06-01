@@ -1,5 +1,6 @@
 import React from "react";
 import SideBar from "../components/admins/common/side-bar";
+
 const AdminTemplate = ({ children }) => {
   return (
     <div>
@@ -10,4 +11,5 @@ const AdminTemplate = ({ children }) => {
     </div>
   );
 };
+
 export default AdminTemplate;

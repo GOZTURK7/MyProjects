@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AdminDashboardPage from "../pages/admins/AdminDashboardPage";
+import AdminUsersEditPage from "../pages/admins/AdminUsersEditPage";
+import AdminUsersNewPage from "../pages/admins/AdminUsersNewPage";
 import AdminUsersPage from "../pages/admins/AdminUsersPage";
 import NotFoundPage from "../pages/common/NotFoundPage";
 import UnAuthorizedPage from "../pages/common/UnAuthorizedPage";
@@ -22,14 +24,19 @@ const CustomRoutes = () => {
     <BrowserRouter>
        
       <Routes>
+
         <Route path="/">
+
           {/* ADMIN ROUTES */}
           <Route path="admin">
             <Route index element={<ProtectedRoute isAdmin={true}><AdminTemplate><AdminDashboardPage/></AdminTemplate></ProtectedRoute>}/>
             <Route path="users">
               <Route index element={<ProtectedRoute isAdmin={true}><AdminTemplate><AdminUsersPage/></AdminTemplate></ProtectedRoute>}/>
+              <Route path=":userId" element={<ProtectedRoute isAdmin={true}><AdminTemplate><AdminUsersEditPage/></AdminTemplate></ProtectedRoute>}/>
+              <Route path="new" element={<ProtectedRoute isAdmin={true}><AdminTemplate><AdminUsersNewPage/></AdminTemplate></ProtectedRoute>}/>
             </Route>
           </Route>
+
 
           {/* USER ROUTES */}
           <Route index element={<UserTemplate><HomePage /></UserTemplate>} />
@@ -49,8 +56,10 @@ const CustomRoutes = () => {
               <Route path=":reservationId" element={<ProtectedRoute><UserTemplate><UserReservationDetailsPage/></UserTemplate></ProtectedRoute>} />
             </Route>
           </Route>
-          <Route path='unauthorized' element={<UserTemplate><UnAuthorizedPage/></UserTemplate>} />
+
+          <Route path='unauthorized' element={<UserTemplate><UnAuthorizedPage /></UserTemplate>} />
           <Route path='*' element={<UserTemplate><NotFoundPage /></UserTemplate>} />
+
         </Route>
       </Routes>
     </BrowserRouter>

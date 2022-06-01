@@ -7,8 +7,33 @@ const getUsers = () => {
   return axios.get(`${API_URL}/user/auth/all`, { headers: authHeader() });
 };
 
-const downloadUsers = () => {
-  return axios.get(`${API_URL}/exel/download/users`, { headers: authHeader() });
+const getUser = (id) => {
+  return axios.get(`${API_URL}/user/${id}/auth`, { headers: authHeader() });
 };
 
-export { getUsers, downloadUsers }
+const createUser = (user) => {
+  return axios.post(`${API_URL}/add`, user,  { headers: authHeader() });
+};
+
+const updateUser = (id, user) => {
+  return axios.put(`${API_URL}/user/${id}/auth`, user, { headers: authHeader() });
+};
+
+const deleteUser = (id) => {
+  return axios.delete(`${API_URL}/user/${id}/auth`, { headers: authHeader() });
+};
+
+const downloadUsers = () => {
+  return axios.get(`${API_URL}/excel/download/users`, {
+    headers: {
+      ...authHeader(),
+      "Content-Type":
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    },
+    responseType: 'blob'
+  });
+};
+
+
+
+export { getUsers, downloadUsers, updateUser, createUser, deleteUser, getUser };
