@@ -15,9 +15,12 @@ import {
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { createUser } from "../../../api/admin-user-service";
+
+
 const AdminUserNew = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
   const initialValues = {
     firstName: "",
     lastName: "",
@@ -26,8 +29,9 @@ const AdminUserNew = () => {
     address: "",
     zipCode: "",
     password: "",
-    roles: ["Customer"],
+    roles: [],   
   };
+
   const validationSchema = Yup.object({
     firstName: Yup.string().required("Please enter first name"),
     lastName: Yup.string().required("Please enter last name"),
@@ -44,6 +48,7 @@ const AdminUserNew = () => {
     password: Yup.string().required("Please enter password"),
     roles: Yup.array().required("Please select a role"),
   });
+
   const onSubmit = async (values) => {
     setLoading(true);
     try {
@@ -57,12 +62,14 @@ const AdminUserNew = () => {
       setLoading(false);
     }
   };
+
   const formik = useFormik({
     enableReinitialize: true,
     initialValues,
     validationSchema,
     onSubmit,
   });
+
   return (
     <Form noValidate onSubmit={formik.handleSubmit}>
       <Card>
@@ -80,6 +87,7 @@ const AdminUserNew = () => {
                 {formik.errors.firstName}
               </Form.Control.Feedback>
             </Form.Group>
+
             <Form.Group as={Col} md={4} lg={3} className="mb-3">
               <Form.Label>Last Name</Form.Label>
               <Form.Control
@@ -92,6 +100,7 @@ const AdminUserNew = () => {
                 {formik.errors.lastName}
               </Form.Control.Feedback>
             </Form.Group>
+
             <Form.Group as={Col} md={4} lg={3} className="mb-3">
               <Form.Label>Phone Number</Form.Label>
               <Form.Control
@@ -106,6 +115,7 @@ const AdminUserNew = () => {
                 {formik.errors.phoneNumber}
               </Form.Control.Feedback>
             </Form.Group>
+
             <Form.Group as={Col} md={4} lg={3} className="mb-3">
               <Form.Label>Address</Form.Label>
               <Form.Control
@@ -118,6 +128,7 @@ const AdminUserNew = () => {
                 {formik.errors.address}
               </Form.Control.Feedback>
             </Form.Group>
+
             <Form.Group as={Col} md={4} lg={3} className="mb-3">
               <Form.Label>Zip Code</Form.Label>
               <Form.Control
@@ -130,6 +141,7 @@ const AdminUserNew = () => {
                 {formik.errors.zipCode}
               </Form.Control.Feedback>
             </Form.Group>
+
             <Form.Group as={Col} md={4} lg={3} className="mb-3">
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -143,6 +155,7 @@ const AdminUserNew = () => {
                 {formik.errors.email}
               </Form.Control.Feedback>
             </Form.Group>
+
             <Form.Group as={Col} md={4} lg={3} className="mb-3">
               <Form.Label>Password</Form.Label>
               <Form.Control
@@ -155,8 +168,10 @@ const AdminUserNew = () => {
                 {formik.errors.password}
               </Form.Control.Feedback>
             </Form.Group>
+
             <Form.Group as={Col} md={4} lg={3} className="mb-3">
               <Form.Label>Roles</Form.Label>
+
               <div className="mb-3">
                 <Form.Check
                   inline
@@ -206,4 +221,5 @@ const AdminUserNew = () => {
     </Form>
   );
 };
+
 export default AdminUserNew;

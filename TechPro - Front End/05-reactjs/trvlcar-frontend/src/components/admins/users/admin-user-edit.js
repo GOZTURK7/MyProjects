@@ -13,11 +13,13 @@ import {
 
 import MaskedInput from "react-maskedinput";
 import { useNavigate, useParams } from "react-router-dom";
-import { getUser, updateUser, deleteUser } from "../../../api/admin-user-service";
+import {
+  deleteUser,
+  getUser,
+  updateUser,
+} from "../../../api/admin-user-service";
 import { toast } from "react-toastify";
 import alertify from "alertifyjs";
-
-
 
 const AdminUserEdit = () => {
   const [initialValues, setInitialValues] = useState({
@@ -29,9 +31,10 @@ const AdminUserEdit = () => {
     zipCode: "",
     username: "",
     password: "",
-    roles: ["Customer"],
+    roles: [],
     builtIn: false,
   });
+
 
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -51,19 +54,20 @@ const AdminUserEdit = () => {
 
   const onSubmit = async (values) => {
     setSaving(true);
-    const data = {...values};
 
-    if(!data.password){
+    const data = { ...values };
+
+    if (!data.password) {
       delete data.password;
     }
 
     try {
       await updateUser(userId, data);
-      toast("User was updated successfully")
+      toast("User was updated successfully");
     } catch (err) {
       console.log(err);
       toast(err.response.data.message);
-    }finally{
+    } finally {
       setSaving(false);
     }
   };
@@ -75,11 +79,10 @@ const AdminUserEdit = () => {
     onSubmit,
   });
 
-
   const loadData = async () => {
-
     try {
       const resp = await getUser(userId);
+      console.log(resp.data);
       setInitialValues(resp.data);
     } catch (err) {
       console.log(err);
@@ -89,7 +92,7 @@ const AdminUserEdit = () => {
     }
   };
 
-  const removeUser = async () =>{
+  const removeUser = async () => {
     setDeleting(true);
     try {
       await deleteUser(userId);
@@ -98,30 +101,25 @@ const AdminUserEdit = () => {
     } catch (err) {
       console.log(err);
       toast(err.response.data.message);
-    }
-    finally{
+    } finally {
       setDeleting(false);
     }
-  }
+  };
 
   const handleDelete = () => {
-    alertify.confirm('Are you sure you want to delete', 
-    ()=>{
-      removeUser();
-    },
-    () => {
+    alertify.confirm(
+      "Deleting",
+      "Are you sure want to delete?",
+      () => {
+        removeUser();
+      },
+      () => {}
+    );
+  };
 
-    });
-    
-    
-   }
-
-  useEffect( ()=>{
+  useEffect(() => {
     loadData();
   }, []);
-  
-
- 
 
   return (
     <Form noValidate onSubmit={formik.handleSubmit}>
@@ -225,7 +223,7 @@ const AdminUserEdit = () => {
               label="Customer"
               type="checkbox"
               name="roles"
-              value={"Customer"}
+              value="Customer"
               checked={formik.values.roles.includes("Customer")}
               onChange={formik.handleChange}
             />

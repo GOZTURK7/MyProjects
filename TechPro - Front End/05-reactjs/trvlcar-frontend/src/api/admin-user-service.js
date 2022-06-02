@@ -12,7 +12,7 @@ const getUser = (id) => {
 };
 
 const createUser = (user) => {
-  return axios.post(`${API_URL}/add`, user,  { headers: authHeader() });
+  return axios.post(`${API_URL}/add`, user, { headers: authHeader() });
 };
 
 const updateUser = (id, user) => {
@@ -22,6 +22,8 @@ const updateUser = (id, user) => {
 const deleteUser = (id) => {
   return axios.delete(`${API_URL}/user/${id}/auth`, { headers: authHeader() });
 };
+
+
 
 const downloadUsers = () => {
   return axios.get(`${API_URL}/excel/download/users`, {
@@ -36,4 +38,5 @@ const downloadUsers = () => {
 
 
 
-export { getUsers, downloadUsers, updateUser, createUser, deleteUser, getUser };
+
+export { getUsers, getUser, createUser, updateUser, deleteUser, downloadUsers };
