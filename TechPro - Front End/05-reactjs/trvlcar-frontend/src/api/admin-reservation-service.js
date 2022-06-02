@@ -15,7 +15,6 @@ const deleteReservation = (id) => {
   return axios.delete(`${API_URL}/reservations/admin/${id}/auth`, { headers: authHeader() });
 };
 
-
 const updateReservation = (id, carId, reservation) => {
   return axios.put(`${API_URL}/reservations/admin/auth?carId=${carId}&reservationId=${id}`, reservation, { headers: authHeader() });
 };
@@ -35,4 +34,4 @@ const downloadReservations = () => {
 
 
 
-export { getReservations, downloadReservations, getReservation, deleteReservation, updateReservation };
+export { getReservations, getReservation, deleteReservation, updateReservation, downloadReservations };

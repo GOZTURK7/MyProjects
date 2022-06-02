@@ -11,7 +11,6 @@ const AdminReservations = () => {
   const [reservations, setReservations] = useState([]);
   const navigate = useNavigate();
 
-
   const handleDownload = async () => {
     try {
       setDownloading(true);
@@ -63,6 +62,7 @@ const AdminReservations = () => {
       name: "Price",
       selector: (row) => row.totalPrice,
       sortable: true,
+      format: (row)=> `$ ${row.totalPrice.toLocaleString()}`
     },
     {
       name: "Status",
@@ -71,11 +71,9 @@ const AdminReservations = () => {
     },
   ];
 
-
   const handleEdit = (row) => {
     navigate(`/admin/reservations/${row.id}`);
   };
-
 
   return (
     <div>
