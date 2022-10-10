@@ -31,7 +31,6 @@ public class SpringFoxConfig {
                 .description("**********")
                 .version("1.1.0")
                 .build();
-
     }
 
 //    http://localhost:8080/car-rental/api/swagger-ui.html#

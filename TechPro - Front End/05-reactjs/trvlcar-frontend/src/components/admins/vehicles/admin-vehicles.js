@@ -17,8 +17,10 @@ const AdminVehicles = () => {
       setDownloading(true);
       const resp = await downloadVehicles();
       fileDownload(resp.data, "vehicles.xlsx");
+
     } catch (err) {
       console.log(err);
+      
     } finally {
       setDownloading(false);
     }
